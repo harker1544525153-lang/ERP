@@ -30,21 +30,8 @@ const saveData = () => {
   fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
 };
 
-const allowedOrigins = [
-  'http://localhost:5177',
-  'http://localhost:3001',
-  'https://harker1544525153-lang.github.io',
-  'https://erp-api-gamma.vercel.app',
-];
-
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin) || origin.startsWith('http://localhost')) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: true,
   credentials: true
 }));
 app.use(express.json());
