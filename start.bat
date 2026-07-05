@@ -56,7 +56,6 @@ echo 后端服务将在 http://localhost:3001 启动
 echo 前端服务将在 http://localhost:5177 启动
 echo.
 
-set DATA_DIR=apps\backend
 start "ERP Backend" cmd /k "cd apps\backend && npm run start"
 timeout /t 3 /nobreak >nul
 start "ERP Frontend" cmd /k "cd apps\frontend && npm run dev"

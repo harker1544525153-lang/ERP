@@ -10,6 +10,14 @@ export const getUserFromStorage = (): any => {
   }
 };
 
+export const setUserToStorage = (user: any): void => {
+  try {
+    localStorage.setItem('user', JSON.stringify(user));
+  } catch {
+    console.error('Failed to save user to storage');
+  }
+};
+
 export const getTenantId = (): string | undefined => {
   return getUserFromStorage()?.tenantId;
 };

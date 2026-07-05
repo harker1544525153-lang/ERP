@@ -34,6 +34,7 @@ const allowedOrigins = [
   'http://localhost:5177',
   'http://localhost:3001',
   'https://harker1544525153-lang.github.io',
+  'https://erp-api-gamma.vercel.app',
 ];
 
 app.use(cors({
@@ -184,6 +185,10 @@ app.get('/api/users', authenticateToken, (req, res) => {
 });
 
 app.post('/api/users', authenticateToken, async (req, res) => {
+  const existingUser = data.users.find(u => u.username === req.body.username && u.tenantId === req.user.tenantId);
+  if (existingUser) {
+    return res.status(400).json({ message: '用户名已存在' });
+  }
   const hashedPassword = await bcrypt.hash(req.body.password || '123456', 10);
   const user = { id: `user-${Date.now()}`, tenantId: req.user.tenantId, password: hashedPassword, ...req.body };
   data.users.push(user);
@@ -194,6 +199,12 @@ app.post('/api/users', authenticateToken, async (req, res) => {
 app.put('/api/users/:id', authenticateToken, async (req, res) => {
   const index = data.users.findIndex(u => u.id === req.params.id);
   if (index !== -1) {
+    if (req.body.username) {
+      const existingUser = data.users.find(u => u.username === req.body.username && u.id !== req.params.id && u.tenantId === req.user.tenantId);
+      if (existingUser) {
+        return res.status(400).json({ message: '用户名已存在' });
+      }
+    }
     if (req.body.password) {
       req.body.password = await bcrypt.hash(req.body.password, 10);
     }

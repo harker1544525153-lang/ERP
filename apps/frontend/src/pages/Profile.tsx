@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import { Form, Input, Button, message, Card, Avatar, Row, Col } from 'antd';
 import { motion } from 'framer-motion';
 import { UserOutlined, MailOutlined, PhoneOutlined, TeamOutlined, LockOutlined } from '@ant-design/icons';
-import { getUserFromStorage } from '@/utils/storage';
+import { getUserFromStorage, setUserToStorage } from '@/utils/storage';
 import { getOrganizations } from '@/api/organization';
+import { updateUser } from '@/api/user';
 
 type Organization = { id: string; name: string; parentId: string | null };
 
@@ -49,9 +50,13 @@ function ProfilePage() {
   const handleSubmit = () => {
     form.validateFields().then(values => {
       const updatedUser = { ...user, ...values };
-      localStorage.setItem('user', JSON.stringify(updatedUser));
-      setUser(updatedUser);
-      message.success('个人信息更新成功');
+      updateUser(user.id, values).then((response) => {
+        setUserToStorage(response.data);
+        setUser(response.data);
+        message.success('个人信息更新成功');
+      }).catch((error: any) => {
+        message.error(error.response?.data?.message || '更新失败');
+      });
     });
   };
 
