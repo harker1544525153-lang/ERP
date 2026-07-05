@@ -437,7 +437,7 @@ function Layout() {
 
         <Content
           style={{
-            padding: '80px 24px 24px',
+            padding: '5px 24px 24px',
             background: 'var(--bg-primary)',
             minHeight: 'calc(100vh - 64px)',
             margin: 0,
