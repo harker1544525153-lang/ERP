@@ -1,11 +1,1 @@
-node_modules/
-dist/
-build/
-.env
-.env.local
-.env.*.local
-.DS_Store
-*.log
-.git/
-pnpm-lock.yaml
-yarn.lock
+node_modules
