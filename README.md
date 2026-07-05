@@ -13,29 +13,51 @@
 - **数据存储**: JSON文件（离线嵌入式数据库）
 - **认证**: JWT
 
-## 项目结构
+## 项目目录结构
 
 ```
 ERP/
-├── apps/
-│   ├── frontend/         # React前端
+├── apps/                     # 应用代码（上传到 GitHub）
+│   ├── frontend/            # React前端
 │   │   ├── src/
-│   │   │   ├── api/      # 真实API调用
-│   │   │   ├── mock/     # Mock数据（保留参考）
-│   │   │   ├── components/ # 公共组件
-│   │   │   ├── contexts/   # React上下文
-│   │   │   ├── pages/    # 页面组件
-│   │   │   ├── utils/    # 工具函数
+│   │   │   ├── api/         # API调用
+│   │   │   ├── components/  # 公共组件
+│   │   │   ├── contexts/    # React上下文
+│   │   │   ├── pages/       # 页面组件
+│   │   │   ├── utils/       # 工具函数
 │   │   │   ├── App.tsx
-│   │   │   └── main.tsx
+│   │   │   ├── main.tsx
+│   │   │   └── index.css
+│   │   ├── .env.production  # 生产环境配置
+│   │   ├── vite.config.ts   # Vite配置（固定端口5177）
 │   │   └── package.json
-│   └── backend/          # Express后端
-│       ├── server.js     # 服务器主文件
-│       ├── data.json     # 嵌入式数据库（JSON文件）
+│   └── backend/             # Express后端
+│       ├── server.js        # 服务器主文件（固定端口3001）
+│       ├── data-init.json   # 初始化数据（上传到GitHub）
+│       ├── data.json        # 运行时数据库（本地专用，不上传）
 │       └── package.json
-├── start.bat             # Windows一键启动
-└── README.md
+├── docs/                    # 文档目录
+│   └── .gitkeep
+├── local/                   # 本地数据目录（不上传GitHub）
+│   ├── database-backups/    # 数据库备份
+│   └── .gitkeep
+├── .github/                 # GitHub Actions
+│   └── workflows/
+│       └── deploy.yml       # 自动部署到GitHub Pages
+├── .gitignore               # 忽略本地文件
+├── start.bat                # Windows一键启动脚本
+└── README.md                # 项目说明文档
 ```
+
+### 目录说明
+
+| 目录 | 是否上传GitHub | 说明 |
+|------|---------------|------|
+| `apps/` | ✅ 是 | 前端和后端源代码 |
+| `docs/` | ✅ 是 | 项目文档 |
+| `local/` | ❌ 否 | 本地数据和备份 |
+| `apps/backend/data.json` | ❌ 否 | 运行时数据库（本地专用） |
+| `apps/backend/data-init.json` | ✅ 是 | 初始化数据模板 |
 
 ## 核心功能模块
 
@@ -86,7 +108,7 @@ ERP/
 
 ---
 
-### 🚀 启动方式
+### 🚀 本地开发
 
 #### 方式一：Windows 一键启动（推荐）
 ```bash
@@ -94,56 +116,34 @@ ERP/
 start.bat
 ```
 
-#### 方式二：PowerShell 启动
+#### 方式二：手动启动
 ```powershell
-# 打开 PowerShell，进入项目目录
-cd D:\Desktop\Trea\ERP
-
 # 安装依赖（首次运行）
 cd apps\frontend; npm install
 cd ..\backend; npm install
 
-# 启动后端服务（保持窗口打开）
+# 启动后端服务（端口3001）
+cd apps\backend
 npm start
 
-# 打开新的 PowerShell 窗口，启动前端服务
-cd D:\Desktop\Trea\ERP\apps\frontend
+# 启动前端服务（端口5177，新终端窗口）
+cd apps\frontend
 npm run dev
 ```
 
-#### 方式三：手动分步启动
-```bash
-# 1. 安装前端依赖
-cd apps/frontend
-npm install
+#### 服务端口
 
-# 2. 安装后端依赖
-cd ../backend
-npm install
+| 服务 | 端口 | 地址 |
+|------|------|------|
+| 前端 | 5177 | http://localhost:5177 |
+| 后端API | 3001 | http://localhost:3001/api |
 
-# 3. 启动后端服务（新终端/新窗口）
-npm run start
-
-# 4. 启动前端服务（新终端/新窗口）
-cd ../frontend
-npm run dev
-```
-
----
-
-### 访问地址
-
-| 服务 | 地址 |
-|------|------|
-| 前端 | http://localhost:5177 |
-| 后端API | http://localhost:3001/api |
-
-### 默认账号
+#### 默认账号
 
 - 用户名: `admin`
 - 密码: `123456`
 
-### 测试用户
+#### 测试用户
 
 | 用户名 | 密码 | 角色 |
 |--------|------|------|
@@ -154,30 +154,20 @@ npm run dev
 | warehouse | 123456 | 仓储主管 |
 | production | 123456 | 生产经理 |
 
-## 数据存储
+---
 
-本项目采用离线嵌入式数据库方案：
-- 所有数据存储在 `apps/backend/data.json` 文件中
-- 无需额外安装数据库服务
-- 数据持久化，重启服务后数据不丢失
-- 支持 CRUD 操作
-- 适合本地开发、演示和小型项目使用
+### 💾 数据库管理
 
-### 数据库管理
+#### 本地数据库
 
-#### 修改测试数据
-直接编辑 `apps/backend/data.json` 文件即可修改测试数据，修改后重启后端服务生效：
+- **运行时数据库**: `apps/backend/data.json`
+- **初始化数据模板**: `apps/backend/data-init.json`
+- **数据备份**: `local/database-backups/`
 
-```bash
-cd apps/backend
-npm start
-```
-
-> **注意**：修改数据后，建议同步更新 `data-init.json` 文件，以确保重置时能恢复到最新的测试数据。
+> `data.json` 已加入 `.gitignore`，不会上传到GitHub，确保本地数据安全。
 
 #### 重置数据库
-如需将数据库恢复到初始状态，可通过 API 接口重置：
-
+如需将数据库恢复到初始状态：
 ```bash
 # 1. 先获取登录令牌
 curl -X POST http://localhost:3001/api/auth/login \
@@ -189,12 +179,9 @@ curl -X POST http://localhost:3001/api/reset \
   -H "Authorization: Bearer YOUR_TOKEN"
 ```
 
-> 初始数据备份文件为 `apps/backend/data-init.json`，重置时会从该文件恢复数据。
-
 #### 同步初始数据
-当 `data.json` 中的数据更新后，建议同步到 `data-init.json`：
-
-```bash
+当 `data.json` 更新后，建议同步到 `data-init.json`：
+```powershell
 # Windows
 copy apps\backend\data.json apps\backend\data-init.json
 
@@ -202,43 +189,17 @@ copy apps\backend\data.json apps\backend\data-init.json
 cp apps/backend/data.json apps/backend/data-init.json
 ```
 
-#### 数据结构说明
-`data.json` 包含以下模块数据：
-- `users` - 用户信息
-- `roles` - 角色权限
-- `organizations` - 组织架构
-- `customers` - 客户信息
-- `suppliers` - 供应商信息
-- `materials` - 物料信息（含成品）
-- `warehouses` - 仓库信息
-- `purchaseOrders` - 采购订单
-- `saleOrders` - 销售订单
-- `inventories` - 库存记录
-- `receivables` - 应收账款
-- `payables` - 应付账款
-- `vouchers` - 凭证记录
-- `bom` - 物料清单（BOM）
-- `productionOrders` - 生产订单
+#### 数据结构
+`data.json` 包含以下模块：
+- `users`, `roles`, `organizations`
+- `customers`, `suppliers`, `materials`, `warehouses`
+- `purchaseOrders`, `saleOrders`, `inventories`
+- `receivables`, `payables`, `vouchers`
+- `purchaseReceipts`, `saleDeliveries`, `transfers`
+- `productionPickings`, `productionReturns`
+- `receipts`, `payments`
 
-## 功能亮点
-
-### 1. 消息通知系统
-- 实时未读消息计数显示
-- 支持按类型筛选通知（采购、销售、凭证、应收、应付、库存、系统）
-- 支持标为已读、全部已读
-- 支持批量删除通知
-
-### 2. 导出功能
-- 用户管理导出
-- 组织架构导出
-- 凭证管理导出
-- 导出格式为 CSV，支持中文
-
-### 3. 用户界面
-- 支持亮色/暗色主题切换
-- 响应式侧边栏布局
-- 流畅的动画效果
-- 玻璃拟态设计风格
+---
 
 ## 部署到 GitHub Pages
 
@@ -270,11 +231,9 @@ cp apps/backend/data.json apps/backend/data-init.json
 ### 第二步：配置前端 API 地址
 
 编辑 `apps/frontend/.env.production` 文件：
-
 ```env
 VITE_API_URL=https://erp-api-xxxx.vercel.app/api
 ```
-
 将 `https://erp-api-xxxx.vercel.app` 替换为你的 Vercel 部署地址。
 
 ---
@@ -282,44 +241,37 @@ VITE_API_URL=https://erp-api-xxxx.vercel.app/api
 ### 第三步：部署前端到 GitHub Pages
 
 #### 方式一：使用 gh-pages 自动部署（推荐）
-
-```bash
-# 进入前端目录
-cd apps/frontend
-
-# 安装依赖（首次）
-npm install
-
-# 构建项目
+```powershell
+cd apps\frontend
 npm run build
-
-# 部署到 GitHub Pages
 npm run deploy
 ```
 
 #### 方式二：手动部署
-
-```bash
+```powershell
 # 构建项目
-cd apps/frontend
+cd apps\frontend
 npm run build
 
 # 创建或切换到 gh-pages 分支
-cd ..
+cd ..\..
 git checkout -b gh-pages
 
 # 删除除 dist 外的所有文件
 git rm -rf .
-git checkout main -- apps/frontend/dist
+git checkout main -- apps\frontend\dist
 
 # 移动 dist 内容到根目录
-mv apps/frontend/dist/* .
+mv apps\frontend\dist\* .
 rm -rf apps
 
 # 提交并推送
 git add .
 git commit -m "deploy: 部署前端到 GitHub Pages"
 git push -u origin gh-pages
+
+# 切回 main 分支
+git checkout main
 ```
 
 ---
@@ -336,8 +288,6 @@ git push -u origin gh-pages
 
 ### 访问地址
 
-部署完成后，系统将通过以下地址访问：
-
 | 服务 | 地址 |
 |------|------|
 | 前端 | https://harker1544525153-lang.github.io/ERP/ |
@@ -349,8 +299,6 @@ git push -u origin gh-pages
 
 #### 后端环境变量（Vercel）
 
-在 Vercel 项目设置中添加以下环境变量：
-
 | 变量名 | 值 | 说明 |
 |--------|-----|------|
 | JWT_SECRET | erp-secret-key | JWT 密钥 |
@@ -359,28 +307,56 @@ git push -u origin gh-pages
 #### 前端环境变量
 
 在 `apps/frontend/.env.production` 中配置：
-
 ```env
 VITE_API_URL=https://erp-api-xxxx.vercel.app/api
 ```
 
 ---
 
-### GitHub 仓库配置建议
+## GitHub 上传命令
 
-1. **分支保护**：
-   - 在 Settings > Branches 中启用 main 分支保护
+### 提交代码到 main 分支
+```powershell
+# 查看状态
+git status
 
-2. **Gitignore 规则**：
-   - 已包含 `.gitignore` 文件，自动排除以下文件：
-     - `node_modules/`
-     - `dist/`, `build/`
-     - `.env` 文件
-     - 日志文件
-     - 包管理器锁文件
+# 添加所有修改
+git add .
 
-3. **GitHub Pages 自定义域名**（可选）：
-   - 在 Settings > Pages > Custom domain 中配置自定义域名
+# 提交（按最新日期格式）
+git commit -m "feat: 更新页面样式和目录结构"
+
+# 推送到远程
+git push origin main
+```
+
+### 部署前端到 gh-pages
+```powershell
+# 构建并部署
+cd apps\frontend
+npm run build
+npm run deploy
+```
+
+### 完整上传流程
+```powershell
+# 1. 更新初始化数据（如有修改）
+copy apps\backend\data.json apps\backend\data-init.json
+
+# 2. 构建前端
+cd apps\frontend
+npm run build
+
+# 3. 提交代码
+cd ..\..
+git add .
+git commit -m "feat: 更新项目"
+git push origin main
+
+# 4. 部署到GitHub Pages
+cd apps\frontend
+npm run deploy
+```
 
 ---
 
@@ -390,7 +366,7 @@ VITE_API_URL=https://erp-api-xxxx.vercel.app/api
 |------|----------|----------|
 | 前端地址 | http://localhost:5177 | https://harker1544525153-lang.github.io/ERP/ |
 | API地址 | /api（代理到 localhost:3001） | https://erp-api-xxxx.vercel.app/api |
-| 数据存储 | 本地 JSON 文件 | Vercel 临时文件系统（重启后数据会重置） |
+| 数据存储 | 本地 JSON 文件（持久化） | Vercel 临时文件系统（重启后数据会重置） |
 
 > **注意**：由于 Vercel 使用临时文件系统，生产环境的数据修改在部署重启后会丢失。如需持久化数据，建议使用外部数据库服务。
 

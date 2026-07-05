@@ -107,23 +107,14 @@ function Layout() {
   };
 
   return (
-    <AntLayout style={{ minHeight: '100vh', background: 'var(--bg-primary)' }}>
-      <motion.div
-        initial={{ x: -256 }}
-        animate={{ x: 0 }}
-        transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-      >
+    <AntLayout style={{ minHeight: '100vh', background: 'var(--bg-primary)', display: 'flex' }}>
         <Sider
           collapsible
           collapsed={collapsed}
           onCollapse={setCollapsed}
           className="glass-sidebar"
           style={{
-            position: 'fixed',
-            left: 0,
-            top: 0,
-            bottom: 0,
-            zIndex: 1000,
+            flexShrink: 0,
             transition: 'width 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
           }}
         >
@@ -273,24 +264,35 @@ function Layout() {
             </motion.button>
           </motion.div>
         </Sider>
-      </motion.div>
 
-      <AntLayout style={{ marginLeft: collapsed ? 80 : 256, transition: 'margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1)', padding: 0 }}>
-        <Header className="glass-header" style={{ position: 'fixed', right: 0, left: collapsed ? 80 : 256, zIndex: 999, height: 64 }}>
+      <AntLayout style={{ flex: 1, minWidth: 0, padding: 0 }}>
+        <Header className="glass-header" style={{ position: 'sticky', top: 0, zIndex: 999, height: 64 }}>
           <div
             style={{
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center',
-              padding: '0 24px',
+              padding: '0 16px',
               height: '100%',
+              minWidth: 0,
             }}
           >
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="text-gradient"
-              style={{ fontSize: 18, fontWeight: 'bold', display: 'flex', alignItems: 'center', gap: 8 }}
+              style={{ 
+                fontSize: 18, 
+                fontWeight: 'bold', 
+                display: 'flex', 
+                alignItems: 'center', 
+                gap: 8,
+                flexShrink: 0,
+                minWidth: 0,
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap',
+              }}
             >
               <motion.div
                 animate={{
@@ -306,9 +308,10 @@ function Layout() {
                   height: 8,
                   borderRadius: '50%',
                   background: 'linear-gradient(135deg, #5b4ef9, #0891b2)',
+                  flexShrink: 0,
                 }}
               />
-              企业资源管理系统
+              <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>企业资源管理系统</span>
             </motion.div>
 
             <Space size="middle">
@@ -406,23 +409,26 @@ function Layout() {
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: 8,
-                    padding: '0 12px',
+                    gap: 6,
+                    padding: '0 8px',
                     transition: 'all 0.2s ease',
                     color: 'var(--text-primary)',
+                    minWidth: 0,
+                    flexShrink: 0,
                   }}
                 >
                   <Avatar
-                    size={32}
+                    size={28}
                     style={{
                       background: 'linear-gradient(135deg, #5b4ef9 0%, #0891b2 100%)',
                       fontWeight: 600,
+                      flexShrink: 0,
                     }}
                   >
                     {user?.realName?.charAt(0) || '用'}
                   </Avatar>
-                  <span style={{ fontSize: 14, fontWeight: 500 }}>{user?.realName || '用户'}</span>
-                  <DownOutlined style={{ fontSize: 14 }} />
+                  <span style={{ fontSize: 13, fontWeight: 500, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: 80 }}>{user?.realName || '用户'}</span>
+                  <DownOutlined style={{ fontSize: 12, flexShrink: 0 }} />
                 </motion.button>
               </Dropdown>
             </Space>

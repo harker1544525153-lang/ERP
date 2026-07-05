@@ -9,3 +9,6 @@ build/
 .git/
 pnpm-lock.yaml
 yarn.lock
+
+local/
+apps/backend/data.json

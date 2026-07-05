@@ -119,6 +119,15 @@
       "phone": "13800138009",
       "status": "active",
       "tenantId": "tenant-1"
+    },
+    {
+      "id": "user-1783235812328",
+      "tenantId": "tenant-1",
+      "password": "test01",
+      "username": "test01",
+      "realName": "测试人员01",
+      "orgId": "org-1783233268431",
+      "roleId": "role-1783235767491"
     }
   ],
   "roles": [
@@ -170,6 +179,12 @@
       "code": "hr",
       "permissions": "[\"user:view\",\"organization:view\"]",
       "tenantId": "tenant-1"
+    },
+    {
+      "id": "role-1783235767491",
+      "tenantId": "tenant-1",
+      "name": "测试人员",
+      "code": "test"
     }
   ],
   "organizations": [
@@ -300,6 +315,28 @@
       "type": "department",
       "parentId": "org-4",
       "tenantId": "tenant-1"
+    },
+    {
+      "id": "org-1783233268431",
+      "tenantId": "tenant-1",
+      "name": "测试一部",
+      "code": "test01",
+      "type": "department",
+      "parentId": "org-1783233344033"
+    },
+    {
+      "id": "org-1783233344033",
+      "tenantId": "tenant-1",
+      "name": "万宝盛华",
+      "code": "wanbao",
+      "type": "company"
+    },
+    {
+      "id": "org-1783235345833",
+      "tenantId": "tenant-1",
+      "name": "万宝盛华1",
+      "code": "wanbao1",
+      "type": "company"
     }
   ],
   "accounts": [
@@ -2004,6 +2041,13 @@
       "name": "杭州分仓",
       "address": "杭州市余杭区物流中心",
       "tenantId": "tenant-1"
+    },
+    {
+      "id": "wh-1783225856279",
+      "tenantId": "tenant-1",
+      "code": "WH-TEST",
+      "name": "????",
+      "address": "????"
     }
   ],
   "purchaseOrders": [

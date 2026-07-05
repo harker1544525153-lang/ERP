@@ -53,16 +53,17 @@ echo.
 echo [4/4] 启动服务...
 echo.
 echo 后端服务将在 http://localhost:3001 启动
-echo 前端服务将在 http://localhost:5176 启动
+echo 前端服务将在 http://localhost:5177 启动
 echo.
 
+set DATA_DIR=apps\backend
 start "ERP Backend" cmd /k "cd apps\backend && npm run start"
 timeout /t 3 /nobreak >nul
 start "ERP Frontend" cmd /k "cd apps\frontend && npm run dev"
 
 echo.
 echo 服务启动中，请稍候...
-echo 访问地址: http://localhost:5176
+echo 访问地址: http://localhost:5177
 echo 默认账号: admin / 密码: 123456
 echo.
 pause

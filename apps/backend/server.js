@@ -9,9 +9,22 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const JWT_SECRET = process.env.JWT_SECRET || 'erp-secret-key';
 
-const DATA_FILE = path.join(__dirname, 'data.json');
+const DATA_DIR = process.env.DATA_DIR || __dirname;
+const DATA_FILE = path.join(DATA_DIR, 'data.json');
+const INIT_FILE = path.join(__dirname, 'data-init.json');
 
-let data = require(DATA_FILE);
+let data = null;
+
+const loadData = () => {
+  if (fs.existsSync(DATA_FILE)) {
+    data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+  } else {
+    data = JSON.parse(fs.readFileSync(INIT_FILE, 'utf8'));
+    saveData();
+  }
+};
+
+loadData();
 
 const saveData = () => {
   fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
@@ -1156,7 +1169,6 @@ app.delete('/api/payments/:id', authenticateToken, (req, res) => {
 });
 
 app.post('/api/reset', authenticateToken, (req, res) => {
-  const INIT_FILE = path.join(__dirname, 'data-init.json');
   try {
     data = JSON.parse(fs.readFileSync(INIT_FILE, 'utf8'));
     saveData();
