@@ -1,0 +1,3702 @@
+{
+  "users": [
+    {
+      "id": "user-1",
+      "username": "admin",
+      "password": "$2a$10$mktG1dOzNfboIjHZUE4jy.Bn4h.nJ07jcMe8mdlmvBpgCFwBgXcEC",
+      "realName": "张总经理",
+      "orgId": "org-1",
+      "roleId": "role-1",
+      "email": "zhangzong@huayou.com",
+      "phone": "13800138000",
+      "status": "active",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "user-2",
+      "username": "finance",
+      "password": "$2a$10$mktG1dOzNfboIjHZUE4jy.Bn4h.nJ07jcMe8mdlmvBpgCFwBgXcEC",
+      "realName": "李财务总监",
+      "orgId": "org-2",
+      "roleId": "role-2",
+      "email": "liwu@huayou.com",
+      "phone": "13800138001",
+      "status": "active",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "user-3",
+      "username": "purchase",
+      "password": "$2a$10$mktG1dOzNfboIjHZUE4jy.Bn4h.nJ07jcMe8mdlmvBpgCFwBgXcEC",
+      "realName": "王采购经理",
+      "orgId": "org-3",
+      "roleId": "role-3",
+      "email": "wangcg@huayou.com",
+      "phone": "13800138002",
+      "status": "active",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "user-4",
+      "username": "sale",
+      "password": "$2a$10$mktG1dOzNfboIjHZUE4jy.Bn4h.nJ07jcMe8mdlmvBpgCFwBgXcEC",
+      "realName": "赵销售总监",
+      "orgId": "org-4",
+      "roleId": "role-4",
+      "email": "zhaoxs@huayou.com",
+      "phone": "13800138003",
+      "status": "active",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "user-5",
+      "username": "warehouse",
+      "password": "$2a$10$mktG1dOzNfboIjHZUE4jy.Bn4h.nJ07jcMe8mdlmvBpgCFwBgXcEC",
+      "realName": "孙仓储主管",
+      "orgId": "org-5",
+      "roleId": "role-5",
+      "email": "suncc@huayou.com",
+      "phone": "13800138004",
+      "status": "active",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "user-6",
+      "username": "production",
+      "password": "$2a$10$mktG1dOzNfboIjHZUE4jy.Bn4h.nJ07jcMe8mdlmvBpgCFwBgXcEC",
+      "realName": "周生产经理",
+      "orgId": "org-6",
+      "roleId": "role-6",
+      "email": "zhousc@huayou.com",
+      "phone": "13800138005",
+      "status": "active",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "user-7",
+      "username": "audit",
+      "password": "$2a$10$mktG1dOzNfboIjHZUE4jy.Bn4h.nJ07jcMe8mdlmvBpgCFwBgXcEC",
+      "realName": "吴审计专员",
+      "orgId": "org-2",
+      "roleId": "role-2",
+      "email": "wusj@huayou.com",
+      "phone": "13800138006",
+      "status": "active",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "user-8",
+      "username": "hr",
+      "password": "$2a$10$mktG1dOzNfboIjHZUE4jy.Bn4h.nJ07jcMe8mdlmvBpgCFwBgXcEC",
+      "realName": "郑人事主管",
+      "orgId": "org-9",
+      "roleId": "role-7",
+      "email": "zhengrs@huayou.com",
+      "phone": "13800138007",
+      "status": "active",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "user-9",
+      "username": "purchase2",
+      "password": "$2a$10$mktG1dOzNfboIjHZUE4jy.Bn4h.nJ07jcMe8mdlmvBpgCFwBgXcEC",
+      "realName": "陈采购专员",
+      "orgId": "org-3",
+      "roleId": "role-3",
+      "email": "chencg@huayou.com",
+      "phone": "13800138008",
+      "status": "active",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "user-10",
+      "username": "sale2",
+      "password": "$2a$10$mktG1dOzNfboIjHZUE4jy.Bn4h.nJ07jcMe8mdlmvBpgCFwBgXcEC",
+      "realName": "刘销售专员",
+      "orgId": "org-4",
+      "roleId": "role-4",
+      "email": "liuxs@huayou.com",
+      "phone": "13800138009",
+      "status": "active",
+      "tenantId": "tenant-1"
+    }
+  ],
+  "roles": [
+    {
+      "id": "role-1",
+      "name": "超级管理员",
+      "code": "admin",
+      "permissions": "[\"*\"]",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "role-2",
+      "name": "财务主管",
+      "code": "finance",
+      "permissions": "[\"account:view\",\"account:edit\",\"voucher:view\",\"voucher:edit\",\"report:view\",\"receivable:view\",\"payable:view\",\"approval:view\"]",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "role-3",
+      "name": "采购专员",
+      "code": "purchase",
+      "permissions": "[\"supplier:view\",\"purchase:view\",\"purchase:edit\",\"material:view\",\"warehouse:view\",\"approval:submit\"]",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "role-4",
+      "name": "销售专员",
+      "code": "sale",
+      "permissions": "[\"customer:view\",\"sale:view\",\"sale:edit\",\"material:view\",\"warehouse:view\",\"approval:submit\"]",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "role-5",
+      "name": "仓储主管",
+      "code": "warehouse",
+      "permissions": "[\"warehouse:view\",\"inventory:view\",\"purchase:view\",\"sale:view\",\"approval:view\"]",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "role-6",
+      "name": "生产主管",
+      "code": "production",
+      "permissions": "[\"material:view\",\"inventory:view\",\"production:view\",\"production:edit\",\"approval:submit\"]",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "role-7",
+      "name": "人事专员",
+      "code": "hr",
+      "permissions": "[\"user:view\",\"organization:view\"]",
+      "tenantId": "tenant-1"
+    }
+  ],
+  "organizations": [
+    {
+      "id": "org-1",
+      "name": "华优科技集团有限公司",
+      "code": "HUAYOU",
+      "type": "company",
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "org-2",
+      "name": "财务部",
+      "code": "FINANCE",
+      "type": "department",
+      "parentId": "org-1",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "org-3",
+      "name": "采购部",
+      "code": "PURCHASE",
+      "type": "department",
+      "parentId": "org-1",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "org-4",
+      "name": "销售部",
+      "code": "SALE",
+      "type": "department",
+      "parentId": "org-1",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "org-5",
+      "name": "仓储物流部",
+      "code": "WAREHOUSE",
+      "type": "department",
+      "parentId": "org-1",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "org-6",
+      "name": "生产制造部",
+      "code": "PRODUCTION",
+      "type": "department",
+      "parentId": "org-1",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "org-7",
+      "name": "技术研发部",
+      "code": "TECH",
+      "type": "department",
+      "parentId": "org-1",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "org-8",
+      "name": "市场品牌部",
+      "code": "MARKET",
+      "type": "department",
+      "parentId": "org-1",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "org-9",
+      "name": "人力资源部",
+      "code": "HR",
+      "type": "department",
+      "parentId": "org-1",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "org-10",
+      "name": "上海分公司",
+      "code": "SHANGHAI",
+      "type": "branch",
+      "parentId": "org-1",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "org-11",
+      "name": "广州分公司",
+      "code": "GUANGZHOU",
+      "type": "branch",
+      "parentId": "org-1",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "org-12",
+      "name": "深圳研发中心",
+      "code": "SHENZHEN_RD",
+      "type": "branch",
+      "parentId": "org-1",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "org-13",
+      "name": "采购一部",
+      "code": "PURCHASE_1",
+      "type": "department",
+      "parentId": "org-3",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "org-14",
+      "name": "采购二部",
+      "code": "PURCHASE_2",
+      "type": "department",
+      "parentId": "org-3",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "org-15",
+      "name": "销售一部",
+      "code": "SALE_1",
+      "type": "department",
+      "parentId": "org-4",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "org-16",
+      "name": "销售二部",
+      "code": "SALE_2",
+      "type": "department",
+      "parentId": "org-4",
+      "tenantId": "tenant-1"
+    }
+  ],
+  "accounts": [
+    {
+      "id": "acc-1",
+      "code": "1001",
+      "name": "库存现金",
+      "category": "asset",
+      "type": "cash",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-2",
+      "code": "1002",
+      "name": "银行存款",
+      "category": "asset",
+      "type": "bank",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-3",
+      "code": "100201",
+      "name": "工商银行深圳分行",
+      "category": "asset",
+      "type": "bank",
+      "level": 2,
+      "parentId": "acc-2",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-4",
+      "code": "100202",
+      "name": "建设银行广州分行",
+      "category": "asset",
+      "type": "bank",
+      "level": 2,
+      "parentId": "acc-2",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-5",
+      "code": "100203",
+      "name": "招商银行上海分行",
+      "category": "asset",
+      "type": "bank",
+      "level": 2,
+      "parentId": "acc-2",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-6",
+      "code": "1122",
+      "name": "应收账款",
+      "category": "asset",
+      "type": "receivable",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-7",
+      "code": "1123",
+      "name": "预付账款",
+      "category": "asset",
+      "type": "receivable",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-8",
+      "code": "1221",
+      "name": "其他应收款",
+      "category": "asset",
+      "type": "receivable",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-9",
+      "code": "1403",
+      "name": "原材料",
+      "category": "asset",
+      "type": "inventory",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-10",
+      "code": "1405",
+      "name": "库存商品",
+      "category": "asset",
+      "type": "inventory",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-11",
+      "code": "1406",
+      "name": "发出商品",
+      "category": "asset",
+      "type": "inventory",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-12",
+      "code": "1511",
+      "name": "长期股权投资",
+      "category": "asset",
+      "type": "investment",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-13",
+      "code": "1601",
+      "name": "固定资产",
+      "category": "asset",
+      "type": "fixed",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-14",
+      "code": "1602",
+      "name": "累计折旧",
+      "category": "asset",
+      "type": "fixed",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-15",
+      "code": "1603",
+      "name": "固定资产减值准备",
+      "category": "asset",
+      "type": "fixed",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-16",
+      "code": "2001",
+      "name": "短期借款",
+      "category": "liability",
+      "type": "loan",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-17",
+      "code": "2202",
+      "name": "应付账款",
+      "category": "liability",
+      "type": "payable",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-18",
+      "code": "2203",
+      "name": "预收账款",
+      "category": "liability",
+      "type": "payable",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-19",
+      "code": "2211",
+      "name": "应付职工薪酬",
+      "category": "liability",
+      "type": "salary",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-20",
+      "code": "2221",
+      "name": "应交税费",
+      "category": "liability",
+      "type": "tax",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-21",
+      "code": "222101",
+      "name": "应交增值税",
+      "category": "liability",
+      "type": "tax",
+      "level": 2,
+      "parentId": "acc-20",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-22",
+      "code": "222102",
+      "name": "应交所得税",
+      "category": "liability",
+      "type": "tax",
+      "level": 2,
+      "parentId": "acc-20",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-23",
+      "code": "2501",
+      "name": "长期借款",
+      "category": "liability",
+      "type": "loan",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-24",
+      "code": "4001",
+      "name": "实收资本",
+      "category": "equity",
+      "type": "capital",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-25",
+      "code": "4002",
+      "name": "资本公积",
+      "category": "equity",
+      "type": "capital",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-26",
+      "code": "4103",
+      "name": "本年利润",
+      "category": "equity",
+      "type": "profit",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-27",
+      "code": "4104",
+      "name": "利润分配",
+      "category": "equity",
+      "type": "profit",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-28",
+      "code": "5001",
+      "name": "生产成本",
+      "category": "expense",
+      "type": "production",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-29",
+      "code": "500101",
+      "name": "直接材料",
+      "category": "expense",
+      "type": "production",
+      "level": 2,
+      "parentId": "acc-28",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-30",
+      "code": "500102",
+      "name": "直接人工",
+      "category": "expense",
+      "type": "production",
+      "level": 2,
+      "parentId": "acc-28",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-31",
+      "code": "500103",
+      "name": "制造费用",
+      "category": "expense",
+      "type": "production",
+      "level": 2,
+      "parentId": "acc-28",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-32",
+      "code": "5101",
+      "name": "制造费用",
+      "category": "expense",
+      "type": "production",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-33",
+      "code": "6001",
+      "name": "主营业务收入",
+      "category": "income",
+      "type": "revenue",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-34",
+      "code": "6051",
+      "name": "其他业务收入",
+      "category": "income",
+      "type": "revenue",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-35",
+      "code": "6301",
+      "name": "营业外收入",
+      "category": "income",
+      "type": "revenue",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-36",
+      "code": "6401",
+      "name": "主营业务成本",
+      "category": "expense",
+      "type": "cost",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-37",
+      "code": "6402",
+      "name": "其他业务成本",
+      "category": "expense",
+      "type": "cost",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-38",
+      "code": "6601",
+      "name": "销售费用",
+      "category": "expense",
+      "type": "sale",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-39",
+      "code": "6602",
+      "name": "管理费用",
+      "category": "expense",
+      "type": "admin",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-40",
+      "code": "6603",
+      "name": "财务费用",
+      "category": "expense",
+      "type": "finance",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-41",
+      "code": "6711",
+      "name": "营业外支出",
+      "category": "expense",
+      "type": "cost",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "acc-42",
+      "code": "6801",
+      "name": "所得税费用",
+      "category": "expense",
+      "type": "tax",
+      "level": 1,
+      "parentId": null,
+      "tenantId": "tenant-1"
+    }
+  ],
+  "customers": [
+    {
+      "id": "cust-1",
+      "code": "C001",
+      "name": "华为技术有限公司",
+      "shortName": "华为",
+      "contact": "陈经理",
+      "phone": "0755-28780808",
+      "address": "深圳市龙岗区坂田华为基地",
+      "taxCode": "91440300746645251H",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "cust-2",
+      "code": "C002",
+      "name": "小米科技有限责任公司",
+      "shortName": "小米",
+      "contact": "刘总监",
+      "phone": "010-82878888",
+      "address": "北京市海淀区清河中街68号",
+      "taxCode": "91110108551385082Q",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "cust-3",
+      "code": "C003",
+      "name": "阿里巴巴集团控股有限公司",
+      "shortName": "阿里巴巴",
+      "contact": "张总",
+      "phone": "0571-85022088",
+      "address": "杭州市余杭区文一西路969号",
+      "taxCode": "91330000768661137A",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "cust-4",
+      "code": "C004",
+      "name": "腾讯科技（深圳）有限公司",
+      "shortName": "腾讯",
+      "contact": "李经理",
+      "phone": "0755-83765566",
+      "address": "深圳市南山区科技园马化腾大厦",
+      "taxCode": "91440300708461136T",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "cust-5",
+      "code": "C005",
+      "name": "字节跳动有限公司",
+      "shortName": "字节跳动",
+      "contact": "王总监",
+      "phone": "010-84391899",
+      "address": "北京市海淀区中关村南大街",
+      "taxCode": "91110108592366240H",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "cust-6",
+      "code": "C006",
+      "name": "OPPO广东移动通信有限公司",
+      "shortName": "OPPO",
+      "contact": "赵经理",
+      "phone": "0769-86016666",
+      "address": "东莞市长安镇乌沙海滨路",
+      "taxCode": "91441900783856346A",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "cust-7",
+      "code": "C007",
+      "name": "vivo智能手机",
+      "shortName": "vivo",
+      "contact": "孙总监",
+      "phone": "0769-85333333",
+      "address": "东莞市长安镇步步高大道",
+      "taxCode": "914419007123456789",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "cust-8",
+      "code": "C008",
+      "name": "京东集团股份有限公司",
+      "shortName": "京东",
+      "contact": "周经理",
+      "phone": "010-89186666",
+      "address": "北京市大兴区亦庄经济技术开发区",
+      "taxCode": "9111030266052765XB",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "cust-9",
+      "code": "C009",
+      "name": "美团",
+      "shortName": "美团",
+      "contact": "吴总监",
+      "phone": "010-53359999",
+      "address": "北京市海淀区中关村大街",
+      "taxCode": "911101085731460906",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "cust-10",
+      "code": "C010",
+      "name": "顺丰控股股份有限公司",
+      "shortName": "顺丰",
+      "contact": "郑经理",
+      "phone": "0755-33811111",
+      "address": "深圳市南山区科技园",
+      "taxCode": "91440300715285637K",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "cust-11",
+      "code": "C011",
+      "name": "网易（杭州）网络有限公司",
+      "shortName": "网易",
+      "contact": "何总监",
+      "phone": "0571-89851600",
+      "address": "杭州市滨江区长河街道",
+      "taxCode": "91330108768225670U",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "cust-12",
+      "code": "C012",
+      "name": "滴滴出行科技有限公司",
+      "shortName": "滴滴",
+      "contact": "梁经理",
+      "phone": "010-82002277",
+      "address": "北京市海淀区中关村软件园",
+      "taxCode": "91110108335469085B",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "cust-13",
+      "code": "C013",
+      "name": "快手科技有限公司",
+      "shortName": "快手",
+      "contact": "杨总监",
+      "phone": "010-58341880",
+      "address": "北京市海淀区中关村",
+      "taxCode": "91110108MA0018N647",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "cust-14",
+      "code": "C014",
+      "name": "拼多多",
+      "shortName": "拼多多",
+      "contact": "黄经理",
+      "phone": "021-53395088",
+      "address": "上海市长宁区娄山关路",
+      "taxCode": "91310105MA1FW4W95T",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "cust-15",
+      "code": "C015",
+      "name": "蚂蚁科技集团股份有限公司",
+      "shortName": "蚂蚁集团",
+      "contact": "彭总监",
+      "phone": "0571-26888888",
+      "address": "杭州市西湖区文三路",
+      "taxCode": "91330000MA27U7JQ8B",
+      "tenantId": "tenant-1"
+    }
+  ],
+  "suppliers": [
+    {
+      "id": "sup-1",
+      "code": "S001",
+      "name": "台积电（中国）有限公司",
+      "shortName": "台积电",
+      "contact": "林经理",
+      "phone": "021-58668888",
+      "address": "上海市浦东新区张江高科技园区",
+      "taxCode": "913100006073846372",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "sup-2",
+      "code": "S002",
+      "name": "三星电子（中国）研发中心",
+      "shortName": "三星",
+      "contact": "崔总监",
+      "phone": "010-65668888",
+      "address": "北京市朝阳区建国门外大街",
+      "taxCode": "911100006000000000",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "sup-3",
+      "code": "S003",
+      "name": "京东方科技集团股份有限公司",
+      "shortName": "京东方",
+      "contact": "王经理",
+      "phone": "010-64318888",
+      "address": "北京市朝阳区酒仙桥路10号",
+      "taxCode": "911100001011016602",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "sup-4",
+      "code": "S004",
+      "name": "欣旺达电子股份有限公司",
+      "shortName": "欣旺达",
+      "contact": "陈总监",
+      "phone": "0755-29668888",
+      "address": "深圳市宝安区石岩镇",
+      "taxCode": "91440300708441631N",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "sup-5",
+      "code": "S005",
+      "name": "立讯精密工业股份有限公司",
+      "shortName": "立讯精密",
+      "contact": "李经理",
+      "phone": "0755-26658888",
+      "address": "深圳市宝安区沙井镇",
+      "taxCode": "91440300771637768H",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "sup-6",
+      "code": "S006",
+      "name": "歌尔股份有限公司",
+      "shortName": "歌尔",
+      "contact": "姜总监",
+      "phone": "0536-6688888",
+      "address": "潍坊市高新技术产业开发区",
+      "taxCode": "91370700724999266H",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "sup-7",
+      "code": "S007",
+      "name": "比亚迪电子（国际）有限公司",
+      "shortName": "比亚迪",
+      "contact": "王经理",
+      "phone": "0755-89888888",
+      "address": "深圳市龙岗区坪山新区",
+      "taxCode": "91440300715285637K",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "sup-8",
+      "code": "S008",
+      "name": "长电科技股份有限公司",
+      "shortName": "长电科技",
+      "contact": "吴总监",
+      "phone": "0510-68158888",
+      "address": "无锡市新区长江路",
+      "taxCode": "91320000134682593W",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "sup-9",
+      "code": "S009",
+      "name": "中芯国际集成电路制造有限公司",
+      "shortName": "中芯国际",
+      "contact": "赵经理",
+      "phone": "021-50808888",
+      "address": "上海市浦东新区张江路",
+      "taxCode": "913100006073608296",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "sup-10",
+      "code": "S010",
+      "name": "华天科技（昆山）电子有限公司",
+      "shortName": "华天科技",
+      "contact": "孙总监",
+      "phone": "0512-57788888",
+      "address": "昆山市开发区龙腾路",
+      "taxCode": "91320583750036789X",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "sup-11",
+      "code": "S011",
+      "name": "汇顶科技（深圳）有限公司",
+      "shortName": "汇顶科技",
+      "contact": "刘经理",
+      "phone": "0755-26031666",
+      "address": "深圳市南山区科技园",
+      "taxCode": "9144030079388878XT",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "sup-12",
+      "code": "S012",
+      "name": "兆易创新科技集团股份有限公司",
+      "shortName": "兆易创新",
+      "contact": "朱总监",
+      "phone": "010-82886666",
+      "address": "北京市海淀区中关村",
+      "taxCode": "91110108758743386T",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "sup-13",
+      "code": "S013",
+      "name": "紫光国芯微电子股份有限公司",
+      "shortName": "紫光国芯",
+      "contact": "马经理",
+      "phone": "010-62969696",
+      "address": "北京市海淀区中关村",
+      "taxCode": "91110000100016804A",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "sup-14",
+      "code": "S014",
+      "name": "生益科技股份有限公司",
+      "shortName": "生益科技",
+      "contact": "陈总监",
+      "phone": "0769-22858888",
+      "address": "东莞市松山湖高新区",
+      "taxCode": "91441900618153869B",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "sup-15",
+      "code": "S015",
+      "name": "深南电路股份有限公司",
+      "shortName": "深南电路",
+      "contact": "周经理",
+      "phone": "0755-26010888",
+      "address": "深圳市南山区科技园",
+      "taxCode": "91440300708440909N",
+      "tenantId": "tenant-1"
+    }
+  ],
+  "materials": [
+    {
+      "id": "mat-1",
+      "code": "M001",
+      "name": "集成电路芯片-QC300",
+      "spec": "型号QC300 32位MCU",
+      "unit": "片",
+      "category": "电子元器件",
+      "price": 45,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-2",
+      "code": "M002",
+      "name": "集成电路芯片-QC301",
+      "spec": "型号QC301 64位SOC",
+      "unit": "片",
+      "category": "电子元器件",
+      "price": 52.5,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-3",
+      "code": "M003",
+      "name": "印刷电路板-双层",
+      "spec": "PCB-001 100x80mm FR4",
+      "unit": "块",
+      "category": "电路板",
+      "price": 85,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-4",
+      "code": "M004",
+      "name": "印刷电路板-四层",
+      "spec": "PCB-002 120x100mm FR4",
+      "unit": "块",
+      "category": "电路板",
+      "price": 125,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-5",
+      "code": "M005",
+      "name": "锂电池-18650",
+      "spec": "3.7V 2600mAh 三星",
+      "unit": "节",
+      "category": "电池",
+      "price": 18.5,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-6",
+      "code": "M006",
+      "name": "锂电池-21700",
+      "spec": "3.7V 4800mAh 特斯拉",
+      "unit": "节",
+      "category": "电池",
+      "price": 28,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-7",
+      "code": "M007",
+      "name": "电容-贴片",
+      "spec": "100nF 0402 X7R",
+      "unit": "个",
+      "category": "电子元器件",
+      "price": 0.12,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-8",
+      "code": "M008",
+      "name": "电阻-贴片",
+      "spec": "10kΩ 0402 1%",
+      "unit": "个",
+      "category": "电子元器件",
+      "price": 0.05,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-9",
+      "code": "M009",
+      "name": "连接器-Type-C",
+      "spec": "16Pin 母座",
+      "unit": "个",
+      "category": "接插件",
+      "price": 3.5,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-10",
+      "code": "M010",
+      "name": "连接器-USB-A",
+      "spec": "公头 90度",
+      "unit": "个",
+      "category": "接插件",
+      "price": 2.8,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-11",
+      "code": "M011",
+      "name": "外壳-铝合金",
+      "spec": "型号H-S001 阳极氧化",
+      "unit": "个",
+      "category": "结构件",
+      "price": 65,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-12",
+      "code": "M012",
+      "name": "外壳-塑料",
+      "spec": "型号P-S001 ABS",
+      "unit": "个",
+      "category": "结构件",
+      "price": 25,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-13",
+      "code": "M013",
+      "name": "显示屏-OLED",
+      "spec": "5.5寸 1080P AMOLED",
+      "unit": "块",
+      "category": "显示器件",
+      "price": 180,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-14",
+      "code": "M014",
+      "name": "显示屏-LCD",
+      "spec": "4.7寸 720P TFT",
+      "unit": "块",
+      "category": "显示器件",
+      "price": 95,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-15",
+      "code": "M015",
+      "name": "摄像头模组",
+      "spec": "1200万像素 CMOS",
+      "unit": "个",
+      "category": "摄像器件",
+      "price": 45,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-16",
+      "code": "M016",
+      "name": "触摸屏",
+      "spec": "5.5寸 电容式",
+      "unit": "块",
+      "category": "触控器件",
+      "price": 68,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-17",
+      "code": "M017",
+      "name": "散热片",
+      "spec": "铝制 50x50mm 氧化黑",
+      "unit": "个",
+      "category": "散热器件",
+      "price": 12,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-18",
+      "code": "M018",
+      "name": "螺丝套装",
+      "spec": "M2-M4 不锈钢",
+      "unit": "套",
+      "category": "五金件",
+      "price": 8.5,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-19",
+      "code": "M019",
+      "name": "包装纸箱",
+      "spec": "40x30x20cm 三层",
+      "unit": "个",
+      "category": "包装材料",
+      "price": 4.5,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-20",
+      "code": "M020",
+      "name": "防静电袋",
+      "spec": "150x200mm",
+      "unit": "个",
+      "category": "包装材料",
+      "price": 0.8,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-21",
+      "code": "M021",
+      "name": "集成电路芯片-QC302",
+      "spec": "型号QC302 AI芯片",
+      "unit": "片",
+      "category": "电子元器件",
+      "price": 120,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-22",
+      "code": "M022",
+      "name": "内存芯片-DDR4",
+      "spec": "4GB 2400MHz",
+      "unit": "颗",
+      "category": "电子元器件",
+      "price": 35,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-23",
+      "code": "M023",
+      "name": "闪存芯片-eMMC",
+      "spec": "64GB",
+      "unit": "颗",
+      "category": "电子元器件",
+      "price": 28,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-24",
+      "code": "M024",
+      "name": "传感器-加速度",
+      "spec": "ADXL345",
+      "unit": "个",
+      "category": "传感器",
+      "price": 8.5,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-25",
+      "code": "M025",
+      "name": "传感器-陀螺仪",
+      "spec": "MPU6050",
+      "unit": "个",
+      "category": "传感器",
+      "price": 12,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-26",
+      "code": "M026",
+      "name": "马达-震动",
+      "spec": "扁平马达 10mm",
+      "unit": "个",
+      "category": "电机",
+      "price": 5.5,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-27",
+      "code": "M027",
+      "name": "天线-WiFi",
+      "spec": "2.4G/5G 双频",
+      "unit": "个",
+      "category": "天线",
+      "price": 3.2,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-28",
+      "code": "M028",
+      "name": "天线-GPS",
+      "spec": "内置陶瓷天线",
+      "unit": "个",
+      "category": "天线",
+      "price": 6.8,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-29",
+      "code": "M029",
+      "name": "音频芯片",
+      "spec": "Codec 立体声",
+      "unit": "片",
+      "category": "电子元器件",
+      "price": 15,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-30",
+      "code": "M030",
+      "name": "扬声器",
+      "spec": "1W 8Ω",
+      "unit": "个",
+      "category": "声学器件",
+      "price": 4.5,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-31",
+      "code": "F001",
+      "name": "智能终端-A1",
+      "spec": "BOM成品",
+      "unit": "台",
+      "category": "成品",
+      "price": 380,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-32",
+      "code": "F002",
+      "name": "智能终端-A2",
+      "spec": "BOM成品",
+      "unit": "台",
+      "category": "成品",
+      "price": 580,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-33",
+      "code": "F003",
+      "name": "电源适配器-P1",
+      "spec": "BOM成品",
+      "unit": "个",
+      "category": "成品",
+      "price": 65,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-34",
+      "code": "F004",
+      "name": "智能手表-W1",
+      "spec": "BOM成品",
+      "unit": "只",
+      "category": "成品",
+      "price": 298,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-35",
+      "code": "F005",
+      "name": "无线耳机-E1",
+      "spec": "BOM成品",
+      "unit": "副",
+      "category": "成品",
+      "price": 128,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "mat-36",
+      "code": "F006",
+      "name": "平板电脑-T1",
+      "spec": "BOM成品",
+      "unit": "台",
+      "category": "成品",
+      "price": 1280,
+      "tenantId": "tenant-1"
+    }
+  ],
+  "bom": [
+    {
+      "id": "bom-1",
+      "code": "BOM001",
+      "name": "智能终端-A1",
+      "version": "V1.0",
+      "status": "active",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "bomi-1",
+          "materialId": "mat-1",
+          "quantity": 1,
+          "unit": "片"
+        },
+        {
+          "id": "bomi-2",
+          "materialId": "mat-3",
+          "quantity": 1,
+          "unit": "块"
+        },
+        {
+          "id": "bomi-3",
+          "materialId": "mat-5",
+          "quantity": 2,
+          "unit": "节"
+        },
+        {
+          "id": "bomi-4",
+          "materialId": "mat-7",
+          "quantity": 20,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-5",
+          "materialId": "mat-8",
+          "quantity": 50,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-6",
+          "materialId": "mat-9",
+          "quantity": 2,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-7",
+          "materialId": "mat-11",
+          "quantity": 1,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-8",
+          "materialId": "mat-17",
+          "quantity": 1,
+          "unit": "个"
+        }
+      ]
+    },
+    {
+      "id": "bom-2",
+      "code": "BOM002",
+      "name": "智能终端-A2",
+      "version": "V1.1",
+      "status": "active",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "bomi-9",
+          "materialId": "mat-2",
+          "quantity": 1,
+          "unit": "片"
+        },
+        {
+          "id": "bomi-10",
+          "materialId": "mat-4",
+          "quantity": 1,
+          "unit": "块"
+        },
+        {
+          "id": "bomi-11",
+          "materialId": "mat-6",
+          "quantity": 2,
+          "unit": "节"
+        },
+        {
+          "id": "bomi-12",
+          "materialId": "mat-7",
+          "quantity": 30,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-13",
+          "materialId": "mat-8",
+          "quantity": 80,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-14",
+          "materialId": "mat-9",
+          "quantity": 3,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-15",
+          "materialId": "mat-10",
+          "quantity": 1,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-16",
+          "materialId": "mat-11",
+          "quantity": 1,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-17",
+          "materialId": "mat-13",
+          "quantity": 1,
+          "unit": "块"
+        },
+        {
+          "id": "bomi-18",
+          "materialId": "mat-15",
+          "quantity": 1,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-19",
+          "materialId": "mat-16",
+          "quantity": 1,
+          "unit": "块"
+        }
+      ]
+    },
+    {
+      "id": "bom-3",
+      "code": "BOM003",
+      "name": "电源适配器-P1",
+      "version": "V2.0",
+      "status": "active",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "bomi-20",
+          "materialId": "mat-1",
+          "quantity": 1,
+          "unit": "片"
+        },
+        {
+          "id": "bomi-21",
+          "materialId": "mat-3",
+          "quantity": 1,
+          "unit": "块"
+        },
+        {
+          "id": "bomi-22",
+          "materialId": "mat-7",
+          "quantity": 15,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-23",
+          "materialId": "mat-8",
+          "quantity": 25,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-24",
+          "materialId": "mat-10",
+          "quantity": 1,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-25",
+          "materialId": "mat-12",
+          "quantity": 1,
+          "unit": "个"
+        }
+      ]
+    },
+    {
+      "id": "bom-4",
+      "code": "BOM004",
+      "name": "智能手表-W1",
+      "version": "V1.0",
+      "status": "active",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "bomi-26",
+          "materialId": "mat-2",
+          "quantity": 1,
+          "unit": "片"
+        },
+        {
+          "id": "bomi-27",
+          "materialId": "mat-3",
+          "quantity": 1,
+          "unit": "块"
+        },
+        {
+          "id": "bomi-28",
+          "materialId": "mat-5",
+          "quantity": 1,
+          "unit": "节"
+        },
+        {
+          "id": "bomi-29",
+          "materialId": "mat-7",
+          "quantity": 10,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-30",
+          "materialId": "mat-8",
+          "quantity": 30,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-31",
+          "materialId": "mat-14",
+          "quantity": 1,
+          "unit": "块"
+        },
+        {
+          "id": "bomi-32",
+          "materialId": "mat-24",
+          "quantity": 1,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-33",
+          "materialId": "mat-25",
+          "quantity": 1,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-34",
+          "materialId": "mat-27",
+          "quantity": 1,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-35",
+          "materialId": "mat-28",
+          "quantity": 1,
+          "unit": "个"
+        }
+      ]
+    },
+    {
+      "id": "bom-5",
+      "code": "BOM005",
+      "name": "无线耳机-E1",
+      "version": "V1.0",
+      "status": "active",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "bomi-36",
+          "materialId": "mat-1",
+          "quantity": 1,
+          "unit": "片"
+        },
+        {
+          "id": "bomi-37",
+          "materialId": "mat-3",
+          "quantity": 1,
+          "unit": "块"
+        },
+        {
+          "id": "bomi-38",
+          "materialId": "mat-5",
+          "quantity": 1,
+          "unit": "节"
+        },
+        {
+          "id": "bomi-39",
+          "materialId": "mat-7",
+          "quantity": 8,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-40",
+          "materialId": "mat-8",
+          "quantity": 20,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-41",
+          "materialId": "mat-29",
+          "quantity": 1,
+          "unit": "片"
+        },
+        {
+          "id": "bomi-42",
+          "materialId": "mat-30",
+          "quantity": 1,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-43",
+          "materialId": "mat-27",
+          "quantity": 1,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-44",
+          "materialId": "mat-12",
+          "quantity": 1,
+          "unit": "个"
+        }
+      ]
+    },
+    {
+      "id": "bom-6",
+      "code": "BOM006",
+      "name": "平板电脑-T1",
+      "version": "V1.0",
+      "status": "active",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "bomi-45",
+          "materialId": "mat-21",
+          "quantity": 1,
+          "unit": "片"
+        },
+        {
+          "id": "bomi-46",
+          "materialId": "mat-4",
+          "quantity": 1,
+          "unit": "块"
+        },
+        {
+          "id": "bomi-47",
+          "materialId": "mat-6",
+          "quantity": 4,
+          "unit": "节"
+        },
+        {
+          "id": "bomi-48",
+          "materialId": "mat-22",
+          "quantity": 2,
+          "unit": "颗"
+        },
+        {
+          "id": "bomi-49",
+          "materialId": "mat-23",
+          "quantity": 1,
+          "unit": "颗"
+        },
+        {
+          "id": "bomi-50",
+          "materialId": "mat-7",
+          "quantity": 40,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-51",
+          "materialId": "mat-8",
+          "quantity": 100,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-52",
+          "materialId": "mat-9",
+          "quantity": 2,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-53",
+          "materialId": "mat-13",
+          "quantity": 1,
+          "unit": "块"
+        },
+        {
+          "id": "bomi-54",
+          "materialId": "mat-15",
+          "quantity": 2,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-55",
+          "materialId": "mat-16",
+          "quantity": 1,
+          "unit": "块"
+        },
+        {
+          "id": "bomi-56",
+          "materialId": "mat-24",
+          "quantity": 1,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-57",
+          "materialId": "mat-25",
+          "quantity": 1,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-58",
+          "materialId": "mat-27",
+          "quantity": 1,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-59",
+          "materialId": "mat-28",
+          "quantity": 1,
+          "unit": "个"
+        },
+        {
+          "id": "bomi-60",
+          "materialId": "mat-11",
+          "quantity": 1,
+          "unit": "个"
+        }
+      ]
+    }
+  ],
+  "productionOrders": [
+    {
+      "id": "prod-1",
+      "code": "WO2024001",
+      "name": "智能终端-A1批量生产",
+      "bomId": "bom-1",
+      "quantity": 1000,
+      "status": "completed",
+      "startDate": "2024-01-05",
+      "endDate": "2024-01-15",
+      "creatorId": "user-6",
+      "approverId": "user-1",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "prod-2",
+      "code": "WO2024002",
+      "name": "智能终端-A2试产",
+      "bomId": "bom-2",
+      "quantity": 200,
+      "status": "in_progress",
+      "startDate": "2024-01-18",
+      "endDate": "2024-01-28",
+      "creatorId": "user-6",
+      "approverId": "user-1",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "prod-3",
+      "code": "WO2024003",
+      "name": "电源适配器-P1量产",
+      "bomId": "bom-3",
+      "quantity": 5000,
+      "status": "approved",
+      "startDate": "2024-02-01",
+      "endDate": "2024-02-10",
+      "creatorId": "user-6",
+      "approverId": "user-1",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "prod-4",
+      "code": "WO2024004",
+      "name": "智能终端-A1追加订单",
+      "bomId": "bom-1",
+      "quantity": 500,
+      "status": "draft",
+      "startDate": "2024-02-15",
+      "endDate": "2024-02-25",
+      "creatorId": "user-6",
+      "approverId": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "prod-5",
+      "code": "WO2024005",
+      "name": "智能手表-W1量产",
+      "bomId": "bom-4",
+      "quantity": 2000,
+      "status": "completed",
+      "startDate": "2024-01-10",
+      "endDate": "2024-01-20",
+      "creatorId": "user-6",
+      "approverId": "user-1",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "prod-6",
+      "code": "WO2024006",
+      "name": "无线耳机-E1试产",
+      "bomId": "bom-5",
+      "quantity": 500,
+      "status": "in_progress",
+      "startDate": "2024-01-25",
+      "endDate": "2024-02-05",
+      "creatorId": "user-6",
+      "approverId": "user-1",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "prod-7",
+      "code": "WO2024007",
+      "name": "平板电脑-T1首批",
+      "bomId": "bom-6",
+      "quantity": 300,
+      "status": "approved",
+      "startDate": "2024-02-08",
+      "endDate": "2024-02-18",
+      "creatorId": "user-6",
+      "approverId": "user-1",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "prod-8",
+      "code": "WO2024008",
+      "name": "智能手表-W1追加",
+      "bomId": "bom-4",
+      "quantity": 1000,
+      "status": "draft",
+      "startDate": "2024-02-20",
+      "endDate": "2024-03-01",
+      "creatorId": "user-6",
+      "approverId": null,
+      "tenantId": "tenant-1"
+    }
+  ],
+  "warehouses": [
+    {
+      "id": "wh-1",
+      "code": "WH001",
+      "name": "深圳总部仓库",
+      "address": "深圳市南山区科技园南区",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "wh-2",
+      "code": "WH002",
+      "name": "深圳原材料仓",
+      "address": "深圳市宝安区福永物流园",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "wh-3",
+      "code": "WH003",
+      "name": "深圳成品仓",
+      "address": "深圳市宝安区沙井工业园",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "wh-4",
+      "code": "WH004",
+      "name": "上海分仓",
+      "address": "上海市浦东新区外高桥保税区",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "wh-5",
+      "code": "WH005",
+      "name": "广州分仓",
+      "address": "广州市白云区太和物流中心",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "wh-6",
+      "code": "WH006",
+      "name": "东莞生产仓",
+      "address": "东莞市长安镇乌沙工业园",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "wh-7",
+      "code": "WH007",
+      "name": "北京分仓",
+      "address": "北京市大兴区亦庄经济开发区",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "wh-8",
+      "code": "WH008",
+      "name": "杭州分仓",
+      "address": "杭州市余杭区物流中心",
+      "tenantId": "tenant-1"
+    }
+  ],
+  "purchaseOrders": [
+    {
+      "id": "po-1",
+      "code": "PO-2024-0001",
+      "date": "2024-01-03",
+      "supplierId": "sup-1",
+      "warehouseId": "wh-2",
+      "totalAmount": 225000,
+      "status": "completed",
+      "creatorId": "user-3",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "poi-1",
+          "materialId": "mat-1",
+          "quantity": 5000,
+          "unitPrice": 45,
+          "receivedQty": 5000
+        },
+        {
+          "id": "poi-2",
+          "materialId": "mat-2",
+          "quantity": 2000,
+          "unitPrice": 52.5,
+          "receivedQty": 2000
+        }
+      ],
+      "linkedVoucherId": "vou-1",
+      "linkedPayableId": "pay-1"
+    },
+    {
+      "id": "po-2",
+      "code": "PO-2024-0002",
+      "date": "2024-01-08",
+      "supplierId": "sup-3",
+      "warehouseId": "wh-2",
+      "totalAmount": 85000,
+      "status": "approved",
+      "creatorId": "user-3",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "poi-3",
+          "materialId": "mat-3",
+          "quantity": 500,
+          "unitPrice": 85,
+          "receivedQty": 300
+        },
+        {
+          "id": "poi-4",
+          "materialId": "mat-4",
+          "quantity": 300,
+          "unitPrice": 125,
+          "receivedQty": 200
+        }
+      ],
+      "linkedVoucherId": null,
+      "linkedPayableId": "pay-2"
+    },
+    {
+      "id": "po-3",
+      "code": "PO-2024-0003",
+      "date": "2024-01-12",
+      "supplierId": "sup-4",
+      "warehouseId": "wh-2",
+      "totalAmount": 185000,
+      "status": "approved",
+      "creatorId": "user-9",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "poi-5",
+          "materialId": "mat-5",
+          "quantity": 5000,
+          "unitPrice": 18.5,
+          "receivedQty": 0
+        },
+        {
+          "id": "poi-6",
+          "materialId": "mat-6",
+          "quantity": 3000,
+          "unitPrice": 28,
+          "receivedQty": 0
+        }
+      ],
+      "linkedVoucherId": null,
+      "linkedPayableId": "pay-3"
+    },
+    {
+      "id": "po-4",
+      "code": "PO-2024-0004",
+      "date": "2024-01-18",
+      "supplierId": "sup-5",
+      "warehouseId": "wh-2",
+      "totalAmount": 17500,
+      "status": "draft",
+      "creatorId": "user-3",
+      "approverId": null,
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "poi-7",
+          "materialId": "mat-7",
+          "quantity": 100000,
+          "unitPrice": 0.12,
+          "receivedQty": 0
+        },
+        {
+          "id": "poi-8",
+          "materialId": "mat-8",
+          "quantity": 100000,
+          "unitPrice": 0.05,
+          "receivedQty": 0
+        }
+      ],
+      "linkedVoucherId": null,
+      "linkedPayableId": null
+    },
+    {
+      "id": "po-5",
+      "code": "PO-2024-0005",
+      "date": "2024-01-22",
+      "supplierId": "sup-7",
+      "warehouseId": "wh-6",
+      "totalAmount": 65000,
+      "status": "completed",
+      "creatorId": "user-9",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "poi-9",
+          "materialId": "mat-11",
+          "quantity": 1000,
+          "unitPrice": 65,
+          "receivedQty": 1000
+        }
+      ],
+      "linkedVoucherId": "vou-3",
+      "linkedPayableId": "pay-4"
+    },
+    {
+      "id": "po-6",
+      "code": "PO-2024-0006",
+      "date": "2024-01-28",
+      "supplierId": "sup-2",
+      "warehouseId": "wh-2",
+      "totalAmount": 900000,
+      "status": "approved",
+      "creatorId": "user-3",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "poi-10",
+          "materialId": "mat-13",
+          "quantity": 5000,
+          "unitPrice": 180,
+          "receivedQty": 2000
+        }
+      ],
+      "linkedVoucherId": null,
+      "linkedPayableId": "pay-5"
+    },
+    {
+      "id": "po-7",
+      "code": "PO-2024-0007",
+      "date": "2024-02-01",
+      "supplierId": "sup-6",
+      "warehouseId": "wh-2",
+      "totalAmount": 225000,
+      "status": "completed",
+      "creatorId": "user-9",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "poi-11",
+          "materialId": "mat-15",
+          "quantity": 5000,
+          "unitPrice": 45,
+          "receivedQty": 5000
+        }
+      ],
+      "linkedVoucherId": "vou-7",
+      "linkedPayableId": "pay-6"
+    },
+    {
+      "id": "po-8",
+      "code": "PO-2024-0008",
+      "date": "2024-02-05",
+      "supplierId": "sup-9",
+      "warehouseId": "wh-2",
+      "totalAmount": 225000,
+      "status": "draft",
+      "creatorId": "user-3",
+      "approverId": null,
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "poi-12",
+          "materialId": "mat-1",
+          "quantity": 5000,
+          "unitPrice": 45,
+          "receivedQty": 0
+        }
+      ],
+      "linkedVoucherId": null,
+      "linkedPayableId": null
+    },
+    {
+      "id": "po-9",
+      "code": "PO-2024-0009",
+      "date": "2024-02-10",
+      "supplierId": "sup-11",
+      "warehouseId": "wh-2",
+      "totalAmount": 120000,
+      "status": "approved",
+      "creatorId": "user-9",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "poi-13",
+          "materialId": "mat-21",
+          "quantity": 1000,
+          "unitPrice": 120,
+          "receivedQty": 500
+        }
+      ],
+      "linkedVoucherId": null,
+      "linkedPayableId": "pay-7"
+    },
+    {
+      "id": "po-10",
+      "code": "PO-2024-0010",
+      "date": "2024-02-15",
+      "supplierId": "sup-12",
+      "warehouseId": "wh-2",
+      "totalAmount": 630000,
+      "status": "draft",
+      "creatorId": "user-3",
+      "approverId": null,
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "poi-14",
+          "materialId": "mat-22",
+          "quantity": 10000,
+          "unitPrice": 35,
+          "receivedQty": 0
+        },
+        {
+          "id": "poi-15",
+          "materialId": "mat-23",
+          "quantity": 10000,
+          "unitPrice": 28,
+          "receivedQty": 0
+        }
+      ],
+      "linkedVoucherId": null,
+      "linkedPayableId": null
+    }
+  ],
+  "saleOrders": [
+    {
+      "id": "so-1",
+      "code": "SO-2024-0001",
+      "date": "2024-01-02",
+      "customerId": "cust-1",
+      "warehouseId": "wh-3",
+      "totalAmount": 380000,
+      "status": "completed",
+      "creatorId": "user-4",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "soi-1",
+          "materialId": "mat-31",
+          "quantity": 1000,
+          "unitPrice": 380,
+          "shippedQty": 1000
+        }
+      ],
+      "linkedVoucherId": "vou-2",
+      "linkedReceivableId": "rec-1"
+    },
+    {
+      "id": "so-2",
+      "code": "SO-2024-0002",
+      "date": "2024-01-06",
+      "customerId": "cust-2",
+      "warehouseId": "wh-3",
+      "totalAmount": 290000,
+      "status": "approved",
+      "creatorId": "user-4",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "soi-2",
+          "materialId": "mat-32",
+          "quantity": 500,
+          "unitPrice": 580,
+          "shippedQty": 300
+        }
+      ],
+      "linkedVoucherId": "vou-4",
+      "linkedReceivableId": "rec-2"
+    },
+    {
+      "id": "so-3",
+      "code": "SO-2024-0003",
+      "date": "2024-01-10",
+      "customerId": "cust-3",
+      "warehouseId": "wh-4",
+      "totalAmount": 320000,
+      "status": "approved",
+      "creatorId": "user-10",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "soi-3",
+          "materialId": "mat-34",
+          "quantity": 1000,
+          "unitPrice": 320,
+          "shippedQty": 500
+        }
+      ],
+      "linkedVoucherId": null,
+      "linkedReceivableId": "rec-3"
+    },
+    {
+      "id": "so-4",
+      "code": "SO-2024-0004",
+      "date": "2024-01-15",
+      "customerId": "cust-4",
+      "warehouseId": "wh-3",
+      "totalAmount": 760000,
+      "status": "draft",
+      "creatorId": "user-4",
+      "approverId": null,
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "soi-4",
+          "materialId": "mat-31",
+          "quantity": 2000,
+          "unitPrice": 380,
+          "shippedQty": 0
+        }
+      ],
+      "linkedVoucherId": null,
+      "linkedReceivableId": null
+    },
+    {
+      "id": "so-5",
+      "code": "SO-2024-0005",
+      "date": "2024-01-20",
+      "customerId": "cust-5",
+      "warehouseId": "wh-5",
+      "totalAmount": 256000,
+      "status": "completed",
+      "creatorId": "user-10",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "soi-5",
+          "materialId": "mat-35",
+          "quantity": 2000,
+          "unitPrice": 128,
+          "shippedQty": 2000
+        }
+      ],
+      "linkedVoucherId": "vou-6",
+      "linkedReceivableId": "rec-4"
+    },
+    {
+      "id": "so-6",
+      "code": "SO-2024-0006",
+      "date": "2024-01-25",
+      "customerId": "cust-6",
+      "warehouseId": "wh-3",
+      "totalAmount": 390000,
+      "status": "approved",
+      "creatorId": "user-4",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "soi-6",
+          "materialId": "mat-36",
+          "quantity": 300,
+          "unitPrice": 1300,
+          "shippedQty": 200
+        }
+      ],
+      "linkedVoucherId": "vou-8",
+      "linkedReceivableId": "rec-5"
+    },
+    {
+      "id": "so-7",
+      "code": "SO-2024-0007",
+      "date": "2024-02-01",
+      "customerId": "cust-7",
+      "warehouseId": "wh-6",
+      "totalAmount": 650000,
+      "status": "draft",
+      "creatorId": "user-10",
+      "approverId": null,
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "soi-7",
+          "materialId": "mat-32",
+          "quantity": 1000,
+          "unitPrice": 650,
+          "shippedQty": 0
+        }
+      ],
+      "linkedVoucherId": null,
+      "linkedReceivableId": null
+    },
+    {
+      "id": "so-8",
+      "code": "SO-2024-0008",
+      "date": "2024-02-05",
+      "customerId": "cust-8",
+      "warehouseId": "wh-4",
+      "totalAmount": 325000,
+      "status": "completed",
+      "creatorId": "user-4",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "soi-8",
+          "materialId": "mat-33",
+          "quantity": 5000,
+          "unitPrice": 65,
+          "shippedQty": 5000
+        }
+      ],
+      "linkedVoucherId": "vou-10",
+      "linkedReceivableId": "rec-6"
+    },
+    {
+      "id": "so-9",
+      "code": "SO-2024-0009",
+      "date": "2024-02-10",
+      "customerId": "cust-11",
+      "warehouseId": "wh-8",
+      "totalAmount": 640000,
+      "status": "approved",
+      "creatorId": "user-10",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "soi-9",
+          "materialId": "mat-34",
+          "quantity": 2000,
+          "unitPrice": 320,
+          "shippedQty": 1000
+        }
+      ],
+      "linkedVoucherId": "vou-12",
+      "linkedReceivableId": "rec-7"
+    },
+    {
+      "id": "so-10",
+      "code": "SO-2024-0010",
+      "date": "2024-02-15",
+      "customerId": "cust-12",
+      "warehouseId": "wh-7",
+      "totalAmount": 380000,
+      "status": "draft",
+      "creatorId": "user-4",
+      "approverId": null,
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "id": "soi-10",
+          "materialId": "mat-31",
+          "quantity": 1000,
+          "unitPrice": 380,
+          "shippedQty": 0
+        }
+      ],
+      "linkedVoucherId": null,
+      "linkedReceivableId": null
+    }
+  ],
+  "inventories": [
+    {
+      "id": "inv-1",
+      "warehouseId": "wh-1",
+      "materialId": "mat-1",
+      "quantity": 2500,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-2",
+      "warehouseId": "wh-1",
+      "materialId": "mat-2",
+      "quantity": 800,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-3",
+      "warehouseId": "wh-1",
+      "materialId": "mat-5",
+      "quantity": 3000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-4",
+      "warehouseId": "wh-2",
+      "materialId": "mat-1",
+      "quantity": 5000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-5",
+      "warehouseId": "wh-2",
+      "materialId": "mat-2",
+      "quantity": 2000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-6",
+      "warehouseId": "wh-2",
+      "materialId": "mat-3",
+      "quantity": 800,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-7",
+      "warehouseId": "wh-2",
+      "materialId": "mat-4",
+      "quantity": 500,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-8",
+      "warehouseId": "wh-2",
+      "materialId": "mat-7",
+      "quantity": 200000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-9",
+      "warehouseId": "wh-2",
+      "materialId": "mat-8",
+      "quantity": 300000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-10",
+      "warehouseId": "wh-2",
+      "materialId": "mat-9",
+      "quantity": 5000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-11",
+      "warehouseId": "wh-2",
+      "materialId": "mat-21",
+      "quantity": 500,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-12",
+      "warehouseId": "wh-2",
+      "materialId": "mat-22",
+      "quantity": 5000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-13",
+      "warehouseId": "wh-2",
+      "materialId": "mat-23",
+      "quantity": 5000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-14",
+      "warehouseId": "wh-3",
+      "materialId": "mat-1",
+      "quantity": 5000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-15",
+      "warehouseId": "wh-3",
+      "materialId": "mat-3",
+      "quantity": 1200,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-16",
+      "warehouseId": "wh-3",
+      "materialId": "mat-11",
+      "quantity": 800,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-17",
+      "warehouseId": "wh-3",
+      "materialId": "mat-13",
+      "quantity": 3000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-18",
+      "warehouseId": "wh-3",
+      "materialId": "mat-15",
+      "quantity": 2000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-19",
+      "warehouseId": "wh-4",
+      "materialId": "mat-1",
+      "quantity": 1000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-20",
+      "warehouseId": "wh-4",
+      "materialId": "mat-3",
+      "quantity": 2000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-21",
+      "warehouseId": "wh-4",
+      "materialId": "mat-4",
+      "quantity": 2000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-22",
+      "warehouseId": "wh-4",
+      "materialId": "mat-13",
+      "quantity": 500,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-23",
+      "warehouseId": "wh-5",
+      "materialId": "mat-13",
+      "quantity": 1500,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-24",
+      "warehouseId": "wh-5",
+      "materialId": "mat-14",
+      "quantity": 1000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-25",
+      "warehouseId": "wh-6",
+      "materialId": "mat-11",
+      "quantity": 2000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-26",
+      "warehouseId": "wh-6",
+      "materialId": "mat-15",
+      "quantity": 5000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-27",
+      "warehouseId": "wh-6",
+      "materialId": "mat-17",
+      "quantity": 2000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-28",
+      "warehouseId": "wh-7",
+      "materialId": "mat-14",
+      "quantity": 2000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-29",
+      "warehouseId": "wh-7",
+      "materialId": "mat-24",
+      "quantity": 10000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-30",
+      "warehouseId": "wh-7",
+      "materialId": "mat-25",
+      "quantity": 10000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-31",
+      "warehouseId": "wh-8",
+      "materialId": "mat-14",
+      "quantity": 1500,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-32",
+      "warehouseId": "wh-8",
+      "materialId": "mat-16",
+      "quantity": 800,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-33",
+      "warehouseId": "wh-3",
+      "materialId": "mat-31",
+      "quantity": 2500,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-34",
+      "warehouseId": "wh-3",
+      "materialId": "mat-32",
+      "quantity": 800,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-35",
+      "warehouseId": "wh-3",
+      "materialId": "mat-36",
+      "quantity": 500,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-36",
+      "warehouseId": "wh-4",
+      "materialId": "mat-33",
+      "quantity": 8000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-37",
+      "warehouseId": "wh-4",
+      "materialId": "mat-34",
+      "quantity": 1500,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-38",
+      "warehouseId": "wh-5",
+      "materialId": "mat-35",
+      "quantity": 5000,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-39",
+      "warehouseId": "wh-6",
+      "materialId": "mat-32",
+      "quantity": 1200,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-40",
+      "warehouseId": "wh-7",
+      "materialId": "mat-31",
+      "quantity": 1500,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "inv-41",
+      "warehouseId": "wh-8",
+      "materialId": "mat-34",
+      "quantity": 2000,
+      "tenantId": "tenant-1"
+    }
+  ],
+  "transfers": [
+    {
+      "id": "tf-1",
+      "code": "TF-2024-0001",
+      "date": "2024-01-05",
+      "fromWarehouseId": "wh-2",
+      "toWarehouseId": "wh-3",
+      "status": "completed",
+      "creatorId": "user-5",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "materialId": "mat-1",
+          "quantity": 3000
+        }
+      ]
+    },
+    {
+      "id": "tf-2",
+      "code": "TF-2024-0002",
+      "date": "2024-01-12",
+      "fromWarehouseId": "wh-3",
+      "toWarehouseId": "wh-4",
+      "status": "approved",
+      "creatorId": "user-5",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "materialId": "mat-13",
+          "quantity": 500
+        }
+      ]
+    },
+    {
+      "id": "tf-3",
+      "code": "TF-2024-0003",
+      "date": "2024-01-20",
+      "fromWarehouseId": "wh-2",
+      "toWarehouseId": "wh-6",
+      "status": "draft",
+      "creatorId": "user-5",
+      "approverId": null,
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "materialId": "mat-11",
+          "quantity": 1000
+        }
+      ]
+    },
+    {
+      "id": "tf-4",
+      "code": "TF-2024-0004",
+      "date": "2024-01-28",
+      "fromWarehouseId": "wh-3",
+      "toWarehouseId": "wh-5",
+      "status": "completed",
+      "creatorId": "user-5",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "materialId": "mat-13",
+          "quantity": 2000
+        }
+      ]
+    },
+    {
+      "id": "tf-5",
+      "code": "TF-2024-0005",
+      "date": "2024-02-03",
+      "fromWarehouseId": "wh-6",
+      "toWarehouseId": "wh-3",
+      "status": "approved",
+      "creatorId": "user-5",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "materialId": "mat-15",
+          "quantity": 3000
+        }
+      ]
+    },
+    {
+      "id": "tf-6",
+      "code": "TF-2024-0006",
+      "date": "2024-02-10",
+      "fromWarehouseId": "wh-2",
+      "toWarehouseId": "wh-7",
+      "status": "completed",
+      "creatorId": "user-5",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "materialId": "mat-24",
+          "quantity": 10000
+        },
+        {
+          "materialId": "mat-25",
+          "quantity": 10000
+        }
+      ]
+    },
+    {
+      "id": "tf-7",
+      "code": "TF-2024-0007",
+      "date": "2024-02-15",
+      "fromWarehouseId": "wh-3",
+      "toWarehouseId": "wh-8",
+      "status": "draft",
+      "creatorId": "user-5",
+      "approverId": null,
+      "tenantId": "tenant-1",
+      "items": [
+        {
+          "materialId": "mat-14",
+          "quantity": 1500
+        }
+      ]
+    }
+  ],
+  "receivables": [
+    {
+      "id": "rec-1",
+      "code": "AR-2024-0001",
+      "customerId": "cust-1",
+      "saleOrderId": "so-1",
+      "date": "2024-01-02",
+      "amount": 450000,
+      "receivedAmount": 450000,
+      "status": "paid",
+      "tenantId": "tenant-1",
+      "linkedVoucherId": "vou-2"
+    },
+    {
+      "id": "rec-2",
+      "code": "AR-2024-0002",
+      "customerId": "cust-2",
+      "saleOrderId": "so-2",
+      "date": "2024-01-06",
+      "amount": 250000,
+      "receivedAmount": 150000,
+      "status": "partial",
+      "tenantId": "tenant-1",
+      "linkedVoucherId": "vou-4"
+    },
+    {
+      "id": "rec-3",
+      "code": "AR-2024-0003",
+      "customerId": "cust-3",
+      "saleOrderId": "so-3",
+      "date": "2024-01-10",
+      "amount": 180000,
+      "receivedAmount": 0,
+      "status": "pending",
+      "tenantId": "tenant-1",
+      "linkedVoucherId": null
+    },
+    {
+      "id": "rec-4",
+      "code": "AR-2024-0004",
+      "customerId": "cust-5",
+      "saleOrderId": "so-5",
+      "date": "2024-01-20",
+      "amount": 360000,
+      "receivedAmount": 360000,
+      "status": "paid",
+      "tenantId": "tenant-1",
+      "linkedVoucherId": "vou-6"
+    },
+    {
+      "id": "rec-5",
+      "code": "AR-2024-0005",
+      "customerId": "cust-6",
+      "saleOrderId": "so-6",
+      "date": "2024-01-25",
+      "amount": 340000,
+      "receivedAmount": 170000,
+      "status": "partial",
+      "tenantId": "tenant-1",
+      "linkedVoucherId": "vou-8"
+    },
+    {
+      "id": "rec-6",
+      "code": "AR-2024-0006",
+      "customerId": "cust-8",
+      "saleOrderId": "so-8",
+      "date": "2024-02-05",
+      "amount": 520000,
+      "receivedAmount": 520000,
+      "status": "paid",
+      "tenantId": "tenant-1",
+      "linkedVoucherId": "vou-10"
+    },
+    {
+      "id": "rec-7",
+      "code": "AR-2024-0007",
+      "customerId": "cust-11",
+      "saleOrderId": "so-9",
+      "date": "2024-02-10",
+      "amount": 600000,
+      "receivedAmount": 300000,
+      "status": "partial",
+      "tenantId": "tenant-1",
+      "linkedVoucherId": "vou-12"
+    }
+  ],
+  "payables": [
+    {
+      "id": "pay-1",
+      "code": "AP-2024-0001",
+      "supplierId": "sup-1",
+      "purchaseOrderId": "po-1",
+      "date": "2024-01-03",
+      "amount": 225000,
+      "paidAmount": 225000,
+      "status": "paid",
+      "tenantId": "tenant-1",
+      "linkedVoucherId": "vou-1"
+    },
+    {
+      "id": "pay-2",
+      "code": "AP-2024-0002",
+      "supplierId": "sup-3",
+      "purchaseOrderId": "po-2",
+      "date": "2024-01-08",
+      "amount": 85000,
+      "paidAmount": 50000,
+      "status": "partial",
+      "tenantId": "tenant-1",
+      "linkedVoucherId": null
+    },
+    {
+      "id": "pay-3",
+      "code": "AP-2024-0003",
+      "supplierId": "sup-4",
+      "purchaseOrderId": "po-3",
+      "date": "2024-01-12",
+      "amount": 185000,
+      "paidAmount": 0,
+      "status": "pending",
+      "tenantId": "tenant-1",
+      "linkedVoucherId": null
+    },
+    {
+      "id": "pay-4",
+      "code": "AP-2024-0004",
+      "supplierId": "sup-7",
+      "purchaseOrderId": "po-5",
+      "date": "2024-01-22",
+      "amount": 65000,
+      "paidAmount": 65000,
+      "status": "paid",
+      "tenantId": "tenant-1",
+      "linkedVoucherId": "vou-3"
+    },
+    {
+      "id": "pay-5",
+      "code": "AP-2024-0005",
+      "supplierId": "sup-2",
+      "purchaseOrderId": "po-6",
+      "date": "2024-01-28",
+      "amount": 900000,
+      "paidAmount": 300000,
+      "status": "partial",
+      "tenantId": "tenant-1",
+      "linkedVoucherId": null
+    },
+    {
+      "id": "pay-6",
+      "code": "AP-2024-0006",
+      "supplierId": "sup-6",
+      "purchaseOrderId": "po-7",
+      "date": "2024-02-01",
+      "amount": 225000,
+      "paidAmount": 225000,
+      "status": "paid",
+      "tenantId": "tenant-1",
+      "linkedVoucherId": "vou-7"
+    },
+    {
+      "id": "pay-7",
+      "code": "AP-2024-0007",
+      "supplierId": "sup-11",
+      "purchaseOrderId": "po-9",
+      "date": "2024-02-10",
+      "amount": 120000,
+      "paidAmount": 60000,
+      "status": "partial",
+      "tenantId": "tenant-1",
+      "linkedVoucherId": null
+    }
+  ],
+  "vouchers": [
+    {
+      "id": "vou-1",
+      "code": "V-2024-0001",
+      "date": "2024-01-03",
+      "type": "purchase",
+      "summary": "采购芯片入库",
+      "status": "approved",
+      "creatorId": "user-2",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "entries": [
+        {
+          "accountId": "acc-9",
+          "debit": 225000,
+          "credit": 0,
+          "summary": "原材料入库"
+        },
+        {
+          "accountId": "acc-17",
+          "debit": 0,
+          "credit": 225000,
+          "summary": "应付供应商"
+        }
+      ],
+      "linkedSourceId": "po-1"
+    },
+    {
+      "id": "vou-2",
+      "code": "V-2024-0002",
+      "date": "2024-01-02",
+      "type": "sale",
+      "summary": "销售芯片出库",
+      "status": "approved",
+      "creatorId": "user-2",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "entries": [
+        {
+          "accountId": "acc-6",
+          "debit": 450000,
+          "credit": 0,
+          "summary": "应收账款"
+        },
+        {
+          "accountId": "acc-33",
+          "debit": 0,
+          "credit": 450000,
+          "summary": "主营业务收入"
+        }
+      ],
+      "linkedSourceId": "so-1"
+    },
+    {
+      "id": "vou-3",
+      "code": "V-2024-0003",
+      "date": "2024-01-22",
+      "type": "purchase",
+      "summary": "采购结构件入库",
+      "status": "approved",
+      "creatorId": "user-2",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "entries": [
+        {
+          "accountId": "acc-9",
+          "debit": 65000,
+          "credit": 0,
+          "summary": "原材料入库"
+        },
+        {
+          "accountId": "acc-17",
+          "debit": 0,
+          "credit": 65000,
+          "summary": "应付供应商"
+        }
+      ],
+      "linkedSourceId": "po-5"
+    },
+    {
+      "id": "vou-4",
+      "code": "V-2024-0004",
+      "date": "2024-01-06",
+      "type": "sale",
+      "summary": "销售电路板及外壳",
+      "status": "approved",
+      "creatorId": "user-2",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "entries": [
+        {
+          "accountId": "acc-6",
+          "debit": 250000,
+          "credit": 0,
+          "summary": "应收账款"
+        },
+        {
+          "accountId": "acc-33",
+          "debit": 0,
+          "credit": 250000,
+          "summary": "主营业务收入"
+        }
+      ],
+      "linkedSourceId": "so-2"
+    },
+    {
+      "id": "vou-5",
+      "code": "V-2024-0005",
+      "date": "2024-01-15",
+      "type": "general",
+      "summary": "支付办公房租",
+      "status": "approved",
+      "creatorId": "user-2",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "entries": [
+        {
+          "accountId": "acc-39",
+          "debit": 15000,
+          "credit": 0,
+          "summary": "房租支出"
+        },
+        {
+          "accountId": "acc-3",
+          "debit": 0,
+          "credit": 15000,
+          "summary": "银行付款"
+        }
+      ],
+      "linkedSourceId": null
+    },
+    {
+      "id": "vou-6",
+      "code": "V-2024-0006",
+      "date": "2024-01-20",
+      "type": "sale",
+      "summary": "销售显示屏出库",
+      "status": "approved",
+      "creatorId": "user-2",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "entries": [
+        {
+          "accountId": "acc-6",
+          "debit": 360000,
+          "credit": 0,
+          "summary": "应收账款"
+        },
+        {
+          "accountId": "acc-33",
+          "debit": 0,
+          "credit": 360000,
+          "summary": "主营业务收入"
+        }
+      ],
+      "linkedSourceId": "so-5"
+    },
+    {
+      "id": "vou-7",
+      "code": "V-2024-0007",
+      "date": "2024-02-01",
+      "type": "purchase",
+      "summary": "采购摄像头模组",
+      "status": "approved",
+      "creatorId": "user-2",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "entries": [
+        {
+          "accountId": "acc-9",
+          "debit": 225000,
+          "credit": 0,
+          "summary": "原材料入库"
+        },
+        {
+          "accountId": "acc-17",
+          "debit": 0,
+          "credit": 225000,
+          "summary": "应付供应商"
+        }
+      ],
+      "linkedSourceId": "po-7"
+    },
+    {
+      "id": "vou-8",
+      "code": "V-2024-0008",
+      "date": "2024-01-25",
+      "type": "sale",
+      "summary": "销售摄像头出库",
+      "status": "approved",
+      "creatorId": "user-2",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "entries": [
+        {
+          "accountId": "acc-6",
+          "debit": 340000,
+          "credit": 0,
+          "summary": "应收账款"
+        },
+        {
+          "accountId": "acc-33",
+          "debit": 0,
+          "credit": 340000,
+          "summary": "主营业务收入"
+        }
+      ],
+      "linkedSourceId": "so-6"
+    },
+    {
+      "id": "vou-9",
+      "code": "V-2024-0009",
+      "date": "2024-01-28",
+      "type": "general",
+      "summary": "计提工资",
+      "status": "draft",
+      "creatorId": "user-2",
+      "approverId": null,
+      "tenantId": "tenant-1",
+      "entries": [
+        {
+          "accountId": "acc-39",
+          "debit": 80000,
+          "credit": 0,
+          "summary": "工资支出"
+        },
+        {
+          "accountId": "acc-19",
+          "debit": 0,
+          "credit": 80000,
+          "summary": "应付工资"
+        }
+      ],
+      "linkedSourceId": null
+    },
+    {
+      "id": "vou-10",
+      "code": "V-2024-0010",
+      "date": "2024-02-05",
+      "type": "sale",
+      "summary": "销售电路板出库",
+      "status": "approved",
+      "creatorId": "user-2",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "entries": [
+        {
+          "accountId": "acc-6",
+          "debit": 520000,
+          "credit": 0,
+          "summary": "应收账款"
+        },
+        {
+          "accountId": "acc-33",
+          "debit": 0,
+          "credit": 520000,
+          "summary": "主营业务收入"
+        }
+      ],
+      "linkedSourceId": "so-8"
+    },
+    {
+      "id": "vou-11",
+      "code": "V-2024-0011",
+      "date": "2024-02-08",
+      "type": "general",
+      "summary": "支付水电费",
+      "status": "approved",
+      "creatorId": "user-2",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "entries": [
+        {
+          "accountId": "acc-39",
+          "debit": 8000,
+          "credit": 0,
+          "summary": "水电费支出"
+        },
+        {
+          "accountId": "acc-3",
+          "debit": 0,
+          "credit": 8000,
+          "summary": "银行付款"
+        }
+      ],
+      "linkedSourceId": null
+    },
+    {
+      "id": "vou-12",
+      "code": "V-2024-0012",
+      "date": "2024-02-10",
+      "type": "sale",
+      "summary": "销售LCD屏出库",
+      "status": "approved",
+      "creatorId": "user-2",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "entries": [
+        {
+          "accountId": "acc-6",
+          "debit": 600000,
+          "credit": 0,
+          "summary": "应收账款"
+        },
+        {
+          "accountId": "acc-33",
+          "debit": 0,
+          "credit": 600000,
+          "summary": "主营业务收入"
+        }
+      ],
+      "linkedSourceId": "so-9"
+    },
+    {
+      "id": "vou-13",
+      "code": "V-2024-0013",
+      "date": "2024-02-12",
+      "type": "general",
+      "summary": "计提折旧",
+      "status": "draft",
+      "creatorId": "user-2",
+      "approverId": null,
+      "tenantId": "tenant-1",
+      "entries": [
+        {
+          "accountId": "acc-39",
+          "debit": 25000,
+          "credit": 0,
+          "summary": "折旧费用"
+        },
+        {
+          "accountId": "acc-14",
+          "debit": 0,
+          "credit": 25000,
+          "summary": "累计折旧"
+        }
+      ],
+      "linkedSourceId": null
+    },
+    {
+      "id": "vou-14",
+      "code": "V-2024-0014",
+      "date": "2024-02-15",
+      "type": "purchase",
+      "summary": "采购AI芯片入库",
+      "status": "approved",
+      "creatorId": "user-2",
+      "approverId": "user-1",
+      "tenantId": "tenant-1",
+      "entries": [
+        {
+          "accountId": "acc-9",
+          "debit": 60000,
+          "credit": 0,
+          "summary": "原材料入库"
+        },
+        {
+          "accountId": "acc-17",
+          "debit": 0,
+          "credit": 60000,
+          "summary": "应付供应商"
+        }
+      ],
+      "linkedSourceId": "po-9"
+    }
+  ],
+  "approvals": [
+    {
+      "id": "app-1",
+      "code": "APP-2024-0001",
+      "type": "purchase",
+      "sourceId": "po-1",
+      "status": "approved",
+      "creatorId": "user-3",
+      "approverId": "user-1",
+      "createTime": "2024-01-03 10:00:00",
+      "approveTime": "2024-01-03 11:30:00",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-2",
+      "code": "APP-2024-0002",
+      "type": "sale",
+      "sourceId": "so-1",
+      "status": "approved",
+      "creatorId": "user-4",
+      "approverId": "user-1",
+      "createTime": "2024-01-02 09:00:00",
+      "approveTime": "2024-01-02 10:15:00",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-3",
+      "code": "APP-2024-0003",
+      "type": "purchase",
+      "sourceId": "po-2",
+      "status": "approved",
+      "creatorId": "user-3",
+      "approverId": "user-1",
+      "createTime": "2024-01-08 14:00:00",
+      "approveTime": "2024-01-08 15:00:00",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-4",
+      "code": "APP-2024-0004",
+      "type": "sale",
+      "sourceId": "so-2",
+      "status": "approved",
+      "creatorId": "user-4",
+      "approverId": "user-1",
+      "createTime": "2024-01-06 10:00:00",
+      "approveTime": "2024-01-06 11:00:00",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-5",
+      "code": "APP-2024-0005",
+      "type": "production",
+      "sourceId": "prod-1",
+      "status": "approved",
+      "creatorId": "user-6",
+      "approverId": "user-1",
+      "createTime": "2024-01-05 08:00:00",
+      "approveTime": "2024-01-05 09:30:00",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-6",
+      "code": "APP-2024-0006",
+      "type": "transfer",
+      "sourceId": "tf-1",
+      "status": "approved",
+      "creatorId": "user-5",
+      "approverId": "user-1",
+      "createTime": "2024-01-05 14:00:00",
+      "approveTime": "2024-01-05 15:00:00",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-7",
+      "code": "APP-2024-0007",
+      "type": "purchase",
+      "sourceId": "po-4",
+      "status": "pending",
+      "creatorId": "user-3",
+      "approverId": null,
+      "createTime": "2024-01-18 16:00:00",
+      "approveTime": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-8",
+      "code": "APP-2024-0008",
+      "type": "sale",
+      "sourceId": "so-4",
+      "status": "pending",
+      "creatorId": "user-4",
+      "approverId": null,
+      "createTime": "2024-01-15 11:00:00",
+      "approveTime": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-9",
+      "code": "APP-2024-0009",
+      "type": "production",
+      "sourceId": "prod-2",
+      "status": "approved",
+      "creatorId": "user-6",
+      "approverId": "user-1",
+      "createTime": "2024-01-18 08:00:00",
+      "approveTime": "2024-01-18 09:00:00",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-10",
+      "code": "APP-2024-0010",
+      "type": "purchase",
+      "sourceId": "po-8",
+      "status": "pending",
+      "creatorId": "user-3",
+      "approverId": null,
+      "createTime": "2024-02-05 10:00:00",
+      "approveTime": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-11",
+      "code": "APP-2024-0011",
+      "type": "production",
+      "sourceId": "prod-3",
+      "status": "approved",
+      "creatorId": "user-6",
+      "approverId": "user-1",
+      "createTime": "2024-01-25 08:00:00",
+      "approveTime": "2024-01-25 09:30:00",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-12",
+      "code": "APP-2024-0012",
+      "type": "sale",
+      "sourceId": "so-7",
+      "status": "pending",
+      "creatorId": "user-10",
+      "approverId": null,
+      "createTime": "2024-02-01 14:00:00",
+      "approveTime": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-13",
+      "code": "APP-2024-0013",
+      "type": "transfer",
+      "sourceId": "tf-3",
+      "status": "pending",
+      "creatorId": "user-5",
+      "approverId": null,
+      "createTime": "2024-01-20 10:00:00",
+      "approveTime": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-14",
+      "code": "APP-2024-0014",
+      "type": "production",
+      "sourceId": "prod-6",
+      "status": "approved",
+      "creatorId": "user-6",
+      "approverId": "user-1",
+      "createTime": "2024-01-25 08:00:00",
+      "approveTime": "2024-01-25 09:00:00",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-15",
+      "code": "APP-2024-0015",
+      "type": "production",
+      "sourceId": "prod-7",
+      "status": "approved",
+      "creatorId": "user-6",
+      "approverId": "user-1",
+      "createTime": "2024-02-05 08:00:00",
+      "approveTime": "2024-02-05 09:30:00",
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-16",
+      "code": "APP-2024-0016",
+      "type": "purchase",
+      "sourceId": "po-10",
+      "status": "pending",
+      "creatorId": "user-3",
+      "approverId": null,
+      "createTime": "2024-02-15 10:00:00",
+      "approveTime": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-17",
+      "code": "APP-2024-0017",
+      "type": "sale",
+      "sourceId": "so-10",
+      "status": "pending",
+      "creatorId": "user-4",
+      "approverId": null,
+      "createTime": "2024-02-15 14:00:00",
+      "approveTime": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-18",
+      "code": "APP-2024-0018",
+      "type": "transfer",
+      "sourceId": "tf-7",
+      "status": "pending",
+      "creatorId": "user-5",
+      "approverId": null,
+      "createTime": "2024-02-15 16:00:00",
+      "approveTime": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-19",
+      "code": "APP-2024-0019",
+      "type": "production",
+      "sourceId": "prod-8",
+      "status": "pending",
+      "creatorId": "user-6",
+      "approverId": null,
+      "createTime": "2024-02-18 08:00:00",
+      "approveTime": null,
+      "tenantId": "tenant-1"
+    },
+    {
+      "id": "app-20",
+      "code": "APP-2024-0020",
+      "type": "purchase",
+      "sourceId": "po-9",
+      "status": "approved",
+      "creatorId": "user-9",
+      "approverId": "user-1",
+      "createTime": "2024-02-10 10:00:00",
+      "approveTime": "2024-02-10 11:00:00",
+      "tenantId": "tenant-1"
+    }
+  ]
+}
