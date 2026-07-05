@@ -275,7 +275,7 @@ function Layout() {
         </Sider>
       </motion.div>
 
-      <AntLayout style={{ marginLeft: collapsed ? 80 : 256, transition: 'margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1)' }}>
+      <AntLayout style={{ marginLeft: collapsed ? 80 : 256, transition: 'margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1)', padding: 0 }}>
         <Header className="glass-header" style={{ position: 'fixed', right: 0, left: collapsed ? 80 : 256, zIndex: 999, height: 64 }}>
           <div
             style={{
@@ -434,6 +434,7 @@ function Layout() {
             padding: '80px 24px 24px',
             background: 'var(--bg-primary)',
             minHeight: 'calc(100vh - 64px)',
+            margin: 0,
           }}
         >
           <AnimatePresence mode="wait">

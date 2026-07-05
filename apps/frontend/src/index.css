@@ -166,6 +166,16 @@ body {
   background: var(--text-secondary);
 }
 
+.ant-layout {
+  margin: 0;
+  padding: 0;
+}
+
+.ant-layout-content {
+  margin: 0;
+  padding: 0;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
