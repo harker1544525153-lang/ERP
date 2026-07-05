@@ -12,7 +12,8 @@ const JWT_SECRET = process.env.JWT_SECRET || 'erp-secret-key';
 const isVercel = !!process.env.VERCEL;
 const DATA_DIR = isVercel ? '/tmp' : (process.env.DATA_DIR || __dirname);
 const DATA_FILE = path.join(DATA_DIR, 'data.json');
-const INIT_FILE = path.join(__dirname, 'data-init.json');
+
+const INIT_DATA = require('./data-init.json');
 
 let data = null;
 
@@ -20,7 +21,7 @@ const loadData = () => {
   if (fs.existsSync(DATA_FILE)) {
     data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
   } else {
-    data = JSON.parse(fs.readFileSync(INIT_FILE, 'utf8'));
+    data = JSON.parse(JSON.stringify(INIT_DATA));
     saveData();
   }
 };
