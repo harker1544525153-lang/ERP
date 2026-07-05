@@ -4,7 +4,7 @@
       "id": "user-1",
       "username": "admin",
       "password": "$2a$10$mktG1dOzNfboIjHZUE4jy.Bn4h.nJ07jcMe8mdlmvBpgCFwBgXcEC",
-      "realName": "张总经理",
+      "realName": "张经理",
       "orgId": "org-1",
       "roleId": "role-1",
       "email": "zhangzong@huayou.com",

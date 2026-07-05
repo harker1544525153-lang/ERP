@@ -315,47 +315,54 @@ VITE_API_URL=https://erp-api-xxxx.vercel.app/api
 
 ## GitHub 上传命令
 
-### 提交代码到 main 分支
+### 完整上传流程（Windows PowerShell）
+
 ```powershell
-# 查看状态
-git status
-
-# 添加所有修改
-git add .
-
-# 提交（按最新日期格式）
-git commit -m "feat: 更新页面样式和目录结构"
-
-# 推送到远程
-git push origin main
-```
-
-### 部署前端到 gh-pages
-```powershell
-# 构建并部署
-cd apps\frontend
-npm run build
-npm run deploy
-```
-
-### 完整上传流程
-```powershell
-# 1. 更新初始化数据（如有修改）
+# ============ 第一步：同步本地数据 ============
+# 如果本地数据库(data.json)有修改，同步到初始化数据模板
 copy apps\backend\data.json apps\backend\data-init.json
 
-# 2. 构建前端
+# ============ 第二步：构建前端 ============
 cd apps\frontend
 npm run build
 
-# 3. 提交代码
+# ============ 第三步：提交代码到 main 分支 ============
 cd ..\..
 git add .
-git commit -m "feat: 更新项目"
+git status  # 确认要提交的文件
+git commit -m "feat: 更新项目内容"
 git push origin main
 
-# 4. 部署到GitHub Pages
+# ============ 第四步：部署前端到 GitHub Pages ============
 cd apps\frontend
 npm run deploy
+
+# ============ 第五步：更新 Vercel 后端（如有后端代码修改） ============
+# 登录 Vercel 网站 https://vercel.com/harker1544/erp-api
+# 在 Deployments 页面点击最新部署右侧的三个点 ...
+# 选择 Redeploy
+```
+
+### 分步说明
+
+| 步骤 | 命令 | 说明 |
+|------|------|------|
+| 1 | `copy apps\backend\data.json apps\backend\data-init.json` | 同步本地数据库到初始化模板 |
+| 2 | `cd apps\frontend && npm run build` | 构建前端项目 |
+| 3 | `git add . && git commit -m "..." && git push origin main` | 提交代码到 main 分支 |
+| 4 | `cd apps\frontend && npm run deploy` | 部署前端到 gh-pages 分支 |
+| 5 | Vercel网站操作 | 重新部署后端服务 |
+
+### 验证部署
+
+```powershell
+# 验证后端API是否正常
+curl -X POST https://erp-api-gamma.vercel.app/api/auth/login ^
+  -H "Content-Type: application/json" ^
+  -d '{"username":"admin","password":"123456"}'
+
+# 验证前端是否正常
+# 访问: https://harker1544525153-lang.github.io/ERP/
 ```
 
 ---
