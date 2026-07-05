@@ -18,18 +18,24 @@ const INIT_DATA = require('./data-init.json');
 let data = null;
 
 const loadData = () => {
-  if (fs.existsSync(DATA_FILE)) {
-    data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
-  } else {
+  if (isVercel) {
     data = JSON.parse(JSON.stringify(INIT_DATA));
-    saveData();
+  } else {
+    if (fs.existsSync(DATA_FILE)) {
+      data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+    } else {
+      data = JSON.parse(JSON.stringify(INIT_DATA));
+      saveData();
+    }
   }
 };
 
 loadData();
 
 const saveData = () => {
-  fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
+  if (!isVercel) {
+    fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
+  }
 };
 
 app.use(cors({
@@ -1170,7 +1176,7 @@ app.delete('/api/payments/:id', authenticateToken, (req, res) => {
 
 app.post('/api/reset', authenticateToken, (req, res) => {
   try {
-    data = JSON.parse(fs.readFileSync(INIT_FILE, 'utf8'));
+    data = JSON.parse(JSON.stringify(INIT_DATA));
     saveData();
     res.json({ data: { message: 'Database reset successfully' } });
   } catch (err) {
