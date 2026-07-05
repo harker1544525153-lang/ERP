@@ -240,36 +240,131 @@ cp apps/backend/data.json apps/backend/data-init.json
 - 流畅的动画效果
 - 玻璃拟态设计风格
 
-## 部署到 GitHub
+## 部署到 GitHub Pages
 
-### 准备工作
+### 架构说明
 
-1. 确保已安装 [Git](https://git-scm.com/downloads)
+本项目采用前后端分离部署：
+- **前端**：部署到 GitHub Pages（静态站点）
+- **后端**：部署到 Vercel（Node.js 服务器）
 
-2. 创建 GitHub 仓库：
-   - 访问 https://github.com/new
-   - 创建一个新的空仓库（不要初始化 README）
+---
 
-### 上传项目
+### 第一步：部署后端到 Vercel
+
+1. **访问 Vercel**：https://vercel.com
+2. **登录**：使用 GitHub 账号登录
+3. **新建项目**：
+   - 点击 "New Project"
+   - 选择导入 GitHub 仓库 `harker1544525153-lang/ERP`
+4. **配置项目**：
+   - 项目名称：`erp-api`
+   - Framework Preset：`Other`
+   - Root Directory：`apps/backend`
+5. **部署**：点击 "Deploy"
+
+6. **获取部署地址**：部署完成后，会得到类似 `https://erp-api-xxxx.vercel.app` 的地址
+
+---
+
+### 第二步：配置前端 API 地址
+
+编辑 `apps/frontend/.env.production` 文件：
+
+```env
+VITE_API_URL=https://erp-api-xxxx.vercel.app/api
+```
+
+将 `https://erp-api-xxxx.vercel.app` 替换为你的 Vercel 部署地址。
+
+---
+
+### 第三步：部署前端到 GitHub Pages
+
+#### 方式一：使用 gh-pages 自动部署（推荐）
 
 ```bash
-# 初始化 git 仓库
-cd ERP
-git init
+# 进入前端目录
+cd apps/frontend
 
-# 添加所有文件（自动排除 .gitignore 中的文件）
-git add .
+# 安装依赖（首次）
+npm install
 
-# 提交代码
-git commit -m "feat: 初始化ERP系统 MVP版本"
+# 构建项目
+npm run build
 
-# 添加远程仓库（替换为你的仓库地址）
-git remote add origin https://github.com/your-username/your-repo-name.git
-
-# 推送到主分支
-git branch -M main
-git push -u origin main
+# 部署到 GitHub Pages
+npm run deploy
 ```
+
+#### 方式二：手动部署
+
+```bash
+# 构建项目
+cd apps/frontend
+npm run build
+
+# 创建或切换到 gh-pages 分支
+cd ..
+git checkout -b gh-pages
+
+# 删除除 dist 外的所有文件
+git rm -rf .
+git checkout main -- apps/frontend/dist
+
+# 移动 dist 内容到根目录
+mv apps/frontend/dist/* .
+rm -rf apps
+
+# 提交并推送
+git add .
+git commit -m "deploy: 部署前端到 GitHub Pages"
+git push -u origin gh-pages
+```
+
+---
+
+### 第四步：配置 GitHub Pages
+
+1. 访问仓库设置：https://github.com/harker1544525153-lang/ERP/settings/pages
+2. 在 "Source" 部分：
+   - 选择 `gh-pages` 分支
+   - 选择 `/ (root)` 目录
+3. 点击 "Save"
+
+---
+
+### 访问地址
+
+部署完成后，系统将通过以下地址访问：
+
+| 服务 | 地址 |
+|------|------|
+| 前端 | https://harker1544525153-lang.github.io/ERP/ |
+| 后端API | https://erp-api-xxxx.vercel.app/api |
+
+---
+
+### 环境变量配置
+
+#### 后端环境变量（Vercel）
+
+在 Vercel 项目设置中添加以下环境变量：
+
+| 变量名 | 值 | 说明 |
+|--------|-----|------|
+| JWT_SECRET | erp-secret-key | JWT 密钥 |
+| PORT | 3001 | 服务端口 |
+
+#### 前端环境变量
+
+在 `apps/frontend/.env.production` 中配置：
+
+```env
+VITE_API_URL=https://erp-api-xxxx.vercel.app/api
+```
+
+---
 
 ### GitHub 仓库配置建议
 
@@ -283,6 +378,21 @@ git push -u origin main
      - `.env` 文件
      - 日志文件
      - 包管理器锁文件
+
+3. **GitHub Pages 自定义域名**（可选）：
+   - 在 Settings > Pages > Custom domain 中配置自定义域名
+
+---
+
+### 本地开发与生产环境差异
+
+| 项目 | 本地开发 | 生产环境 |
+|------|----------|----------|
+| 前端地址 | http://localhost:5177 | https://harker1544525153-lang.github.io/ERP/ |
+| API地址 | /api（代理到 localhost:3001） | https://erp-api-xxxx.vercel.app/api |
+| 数据存储 | 本地 JSON 文件 | Vercel 临时文件系统（重启后数据会重置） |
+
+> **注意**：由于 Vercel 使用临时文件系统，生产环境的数据修改在部署重启后会丢失。如需持久化数据，建议使用外部数据库服务。
 
 ## 开发注意事项
 
