@@ -9,7 +9,8 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const JWT_SECRET = process.env.JWT_SECRET || 'erp-secret-key';
 
-const DATA_DIR = process.env.DATA_DIR || __dirname;
+const isVercel = !!process.env.VERCEL;
+const DATA_DIR = isVercel ? '/tmp' : (process.env.DATA_DIR || __dirname);
 const DATA_FILE = path.join(DATA_DIR, 'data.json');
 const INIT_FILE = path.join(__dirname, 'data-init.json');
 
