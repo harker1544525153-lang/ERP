@@ -22,9 +22,10 @@ function Login() {
       const response = await login(values);
       localStorage.setItem('token', response.data.access_token);
       localStorage.setItem('user', JSON.stringify(response.data.user));
+      window.dispatchEvent(new Event('storage'));
       message.success(response.message || '登录成功');
       setTimeout(() => {
-        window.location.href = '/';
+        navigate('/', { replace: true });
       }, 1000);
     } catch (error: any) {
       setErrorMessage(error.response?.data?.message || '登录失败');

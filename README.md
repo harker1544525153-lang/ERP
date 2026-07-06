@@ -31,10 +31,11 @@ ERP/
 │   │   ├── .env.production  # 生产环境配置
 │   │   ├── vite.config.ts   # Vite配置（固定端口5177）
 │   │   └── package.json
-│   └── backend/             # Express后端
+│   └── backend/             # Express后端（Vercel部署根目录）
 │       ├── server.js        # 服务器主文件（固定端口3001）
 │       ├── data-init.json   # 初始化数据（上传到GitHub）
 │       ├── data.json        # 运行时数据库（本地专用，不上传）
+│       ├── vercel.json      # Vercel部署配置
 │       └── package.json
 ├── docs/                    # 文档目录
 │   └── .gitkeep
@@ -221,10 +222,15 @@ cp apps/backend/data.json apps/backend/data-init.json
 4. **配置项目**：
    - 项目名称：`erp-api`
    - Framework Preset：`Other`
-   - Root Directory：`apps/backend`
+   - Root Directory：`apps/backend`（**重要**：必须设置为此值）
 5. **部署**：点击 "Deploy"
 
 6. **获取部署地址**：部署完成后，会得到类似 `https://erp-api-xxxx.vercel.app` 的地址
+
+> **Vercel 配置说明**：
+> - Vercel 只读取 `apps/backend` 目录下的文件
+> - `apps/backend/vercel.json` 定义了 Serverless Function 配置
+> - `apps/backend/package.json` 定义了 Node.js 依赖和启动脚本
 
 ---
 
@@ -338,9 +344,10 @@ cd apps\frontend
 npm run deploy
 
 # ============ 第五步：更新 Vercel 后端（如有后端代码修改） ============
-# 登录 Vercel 网站 https://vercel.com/harker1544/erp-api
-# 在 Deployments 页面点击最新部署右侧的三个点 ...
-# 选择 Redeploy
+# Vercel 会自动检测 GitHub main 分支的更新并重新部署
+# 如果需要手动触发：登录 Vercel 网站 https://vercel.com/harker1544/erp-api
+# 在 Deployments 页面点击最新部署右侧的三个点 ...，选择 Redeploy
+# 注意：Vercel 只读取 apps/backend 目录的变更
 ```
 
 ### 分步说明
@@ -351,7 +358,7 @@ npm run deploy
 | 2 | `cd apps\frontend && npm run build` | 构建前端项目 |
 | 3 | `git add . && git commit -m "..." && git push origin main` | 提交代码到 main 分支 |
 | 4 | `cd apps\frontend && npm run deploy` | 部署前端到 gh-pages 分支 |
-| 5 | Vercel网站操作 | 重新部署后端服务 |
+| 5 | Vercel自动部署 | 检测 apps/backend 目录变更后自动重新部署 |
 
 ### 验证部署
 
